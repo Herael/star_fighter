@@ -20,6 +20,9 @@
 		59EFC3A123C20132001D37F4 /* XWing_fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59EFC3A023C20132001D37F4 /* XWing_fire.mp3 */; };
 		59EFC3A323C20141001D37F4 /* TIE_fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59EFC3A223C20141001D37F4 /* TIE_fire.mp3 */; };
 		59EFC3A523C2049C001D37F4 /* explosion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59EFC3A423C2049C001D37F4 /* explosion.mp3 */; };
+		59EFC3B623C21DD8001D37F4 /* SpaceshipMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */; };
+		59EFC3B923C21E0D001D37F4 /* Spaceship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3B823C21E0D001D37F4 /* Spaceship.swift */; };
+		59EFC3BB23C21E1C001D37F4 /* SpaceshipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */; };
 		FF343944EECEA31DFEF0AE54 /* Pods_StarFighter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128386F583CC21BD28FD36A8 /* Pods_StarFighter.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +44,9 @@
 		59EFC3A023C20132001D37F4 /* XWing_fire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = XWing_fire.mp3; sourceTree = "<group>"; };
 		59EFC3A223C20141001D37F4 /* TIE_fire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TIE_fire.mp3; sourceTree = "<group>"; };
 		59EFC3A423C2049C001D37F4 /* explosion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion.mp3; sourceTree = "<group>"; };
+		59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipMockService.swift; sourceTree = "<group>"; };
+		59EFC3B823C21E0D001D37F4 /* Spaceship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spaceship.swift; sourceTree = "<group>"; };
+		59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipService.swift; sourceTree = "<group>"; };
 		F279764D71AEE228274759B6 /* Pods-StarFighter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarFighter.debug.xcconfig"; path = "Target Support Files/Pods-StarFighter/Pods-StarFighter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +83,8 @@
 		59B5AF1D23C0CD19006A849B /* StarFighter */ = {
 			isa = PBXGroup;
 			children = (
+				59EFC3B723C21DFD001D37F4 /* Domains */,
+				59EFC3B123C21D9E001D37F4 /* Platforms */,
 				59EFC39F23C200D4001D37F4 /* soundEffects */,
 				59B5AF1E23C0CD19006A849B /* AppDelegate.swift */,
 				59B5AF2023C0CD19006A849B /* GameScene.sks */,
@@ -101,6 +109,31 @@
 				59EFC3A023C20132001D37F4 /* XWing_fire.mp3 */,
 			);
 			path = soundEffects;
+			sourceTree = "<group>";
+		};
+		59EFC3B123C21D9E001D37F4 /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				59EFC3B223C21DB4001D37F4 /* Mock */,
+			);
+			path = Platforms;
+			sourceTree = "<group>";
+		};
+		59EFC3B223C21DB4001D37F4 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		59EFC3B723C21DFD001D37F4 /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				59EFC3B823C21E0D001D37F4 /* Spaceship.swift */,
+				59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */,
+			);
+			path = Domains;
 			sourceTree = "<group>";
 		};
 		84122C12BBF7C49AC2A8C32C /* Pods */ = {
@@ -242,9 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EFC3B623C21DD8001D37F4 /* SpaceshipMockService.swift in Sources */,
 				59B5AF2523C0CD19006A849B /* GameScene.swift in Sources */,
 				59B5AF2723C0CD19006A849B /* GameViewController.swift in Sources */,
 				59B5AF1F23C0CD19006A849B /* AppDelegate.swift in Sources */,
+				59EFC3BB23C21E1C001D37F4 /* SpaceshipService.swift in Sources */,
+				59EFC3B923C21E0D001D37F4 /* Spaceship.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

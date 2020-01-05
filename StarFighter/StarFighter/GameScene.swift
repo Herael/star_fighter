@@ -132,7 +132,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         torpilleNode = SKSpriteNode(imageNamed: "laser")
         torpilleNode.size = CGSize(width: torpilleNode.size.width/6, height: torpilleNode.size.width/6)
-        torpilleNode.position = CGPoint(x: 0, y: player.position.y + ((player.size.height) / 2) + 30)x
+        torpilleNode.position = CGPoint(x: 0, y: player.position.y + ((player.size.height) / 2) + 30)
         
         torpilleNode.physicsBody = SKPhysicsBody(rectangleOf: torpilleNode!.size)
         torpilleNode.physicsBody?.isDynamic = true
