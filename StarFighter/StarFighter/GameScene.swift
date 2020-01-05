@@ -68,10 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     HealthBarPlayer.zPosition = 1
     self.addChild(HealthBarPlayer)
     
-    HealthBarEnemy = SKSpriteNode(color:SKColor .yellow, size: CGSize(width: lifeAlien, height: 30))
-    HealthBarEnemy.position = CGPoint(x: self.frame.width / 4.2, y: self.frame.height/2.5)
-    HealthBarEnemy.zPosition = 1
-    self.addChild(HealthBarEnemy)
+    
     
     addAlien()
     gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
@@ -79,7 +76,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 }
                 
     @objc func enemyFire(){
-        self.run(SKAction.playSoundFileNamed("TIE_fire.mp3", waitForCompletion: false))
+        //self.run(SKAction.playSoundFileNamed("TIE_fire.mp3", waitForCompletion: false))
         
         torpilleNode = SKSpriteNode(imageNamed: "torpedo")
         torpilleNode.size = CGSize(width: torpilleNode.size.width/3, height: torpilleNode.size.width/3)
@@ -117,6 +114,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody?.contactTestBitMask = torpilleCategory
         alien.physicsBody?.collisionBitMask = 0
         self.addChild(alien)
+        HealthBarEnemy = SKSpriteNode(color:SKColor .yellow, size: CGSize(width: lifeAlien, height: 30))
+        HealthBarEnemy.position = CGPoint(x: self.frame.width / 4.2, y: self.frame.height/2.5)
+        HealthBarEnemy.zPosition = 1
+        self.addChild(HealthBarEnemy)
     
     }
 
@@ -125,7 +126,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func fireTorpille(){
-        self.run(SKAction.playSoundFileNamed("XWing_fire.mp3", waitForCompletion: false))
+        //self.run(SKAction.playSoundFileNamed("XWing_fire.mp3", waitForCompletion: false))
         
         torpilleNode = SKSpriteNode(imageNamed: "laser")
         torpilleNode.size = CGSize(width: torpilleNode.size.width/3, height: torpilleNode.size.width/3)
@@ -187,7 +188,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             lifePlayer -= 10
             HealthBarPlayer.size = CGSize(width: lifePlayer, height: 30)
         }else{
-            lifeAlien -= 5
+            lifeAlien -= 150
             HealthBarEnemy.size = CGSize(width: lifeAlien, height: 30)
         }
         
@@ -198,7 +199,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             win.fontSize = 50
             win.color = UIColor.white
             addChild(win)
-            self.scene?.view!.isPaused = true
+            alien.removeFromParent()
+            //HealthBarEnemy.removeFromParent()
+            lifeAlien = 300
+            addAlien()
+            //self.scene?.view!.isPaused = true
             
         }
     }
