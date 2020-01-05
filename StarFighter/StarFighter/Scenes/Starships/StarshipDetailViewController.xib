@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StarshipDetailViewController" customModule="StarFighter" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="hTU-cu-fB5">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VMR-bL-CPZ">
+                    <rect key="frame" x="40" y="164" width="334" height="198"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Starship Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncK-WS-qoQ">
+                    <rect key="frame" x="50" y="372" width="314" height="33.5"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2T-ws-58J">
+                    <rect key="frame" x="117.5" y="437" width="53" height="22"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0G-r5-rcB">
+                    <rect key="frame" x="180.5" y="437" width="53" height="22"/>
+                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="g2T-ws-58J" firstAttribute="firstBaseline" secondItem="f0G-r5-rcB" secondAttribute="firstBaseline" id="1F6-Ok-DSt"/>
+                <constraint firstItem="ncK-WS-qoQ" firstAttribute="top" secondItem="VMR-bL-CPZ" secondAttribute="bottom" constant="10" id="2Lj-2q-oSQ"/>
+                <constraint firstItem="VMR-bL-CPZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="Awa-fo-2iW"/>
+                <constraint firstItem="f0G-r5-rcB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="C84-4h-2af"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="g2T-ws-58J" secondAttribute="bottom" constant="403" id="L3m-EO-ikj"/>
+                <constraint firstItem="g2T-ws-58J" firstAttribute="top" secondItem="ncK-WS-qoQ" secondAttribute="bottom" constant="31.5" id="LTQ-ST-Br7"/>
+                <constraint firstItem="f0G-r5-rcB" firstAttribute="leading" secondItem="hTU-cu-fB5" secondAttribute="trailing" constant="-233.5" id="LaM-u9-tz4"/>
+                <constraint firstItem="f0G-r5-rcB" firstAttribute="leading" secondItem="hTU-cu-fB5" secondAttribute="trailing" constant="-233.5" id="Pey-6l-RAT"/>
+                <constraint firstItem="VMR-bL-CPZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qfv-v2-8JL"/>
+                <constraint firstItem="VMR-bL-CPZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="Xx3-gc-fnV"/>
+                <constraint firstItem="f0G-r5-rcB" firstAttribute="leading" secondItem="g2T-ws-58J" secondAttribute="trailing" constant="10" id="Y4R-k0-fYr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hTU-cu-fB5" secondAttribute="bottom" constant="-34" id="gMQ-WO-1b1"/>
+                <constraint firstItem="g2T-ws-58J" firstAttribute="centerY" secondItem="hTU-cu-fB5" secondAttribute="centerY" id="gdg-mK-B3p"/>
+                <constraint firstItem="hTU-cu-fB5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iLY-tX-1Ae"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="VMR-bL-CPZ" secondAttribute="bottom" constant="500" id="obd-PD-fLu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hTU-cu-fB5" secondAttribute="trailing" id="vpp-Xf-NeL"/>
+                <constraint firstItem="g2T-ws-58J" firstAttribute="baseline" secondItem="f0G-r5-rcB" secondAttribute="baseline" id="wjK-Ef-BUr"/>
+                <constraint firstItem="ncK-WS-qoQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="wyS-65-z8Y"/>
+                <constraint firstItem="hTU-cu-fB5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-44" id="xQy-XY-ZIJ"/>
+                <constraint firstItem="ncK-WS-qoQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="yCW-uC-hGY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="background" width="720" height="1280"/>
+    </resources>
+</document>
