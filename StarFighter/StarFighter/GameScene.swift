@@ -48,11 +48,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let image = UIImage(data: data)
     let Texture = SKTexture(image: image!)
     player = SKSpriteNode(texture: Texture)
+       // player = SKSpriteNode(imageNamed: "falcon")
     player.name = "player"
     
     player.position = CGPoint(x: 0, y: -450)
     player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
     player.physicsBody?.isDynamic = true
+        //player.size = CGSize(width: player.size.width / 3, height: player.size.height / 3)
     
     player.physicsBody?.categoryBitMask = playerCategory
     player.physicsBody?.contactTestBitMask = torpilleCategory
@@ -129,8 +131,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //self.run(SKAction.playSoundFileNamed("XWing_fire.mp3", waitForCompletion: false))
         
         torpilleNode = SKSpriteNode(imageNamed: "laser")
-        torpilleNode.size = CGSize(width: torpilleNode.size.width/3, height: torpilleNode.size.width/3)
-        torpilleNode.position = CGPoint(x: 0, y: player.position.y + player.size.height)
+        torpilleNode.size = CGSize(width: torpilleNode.size.width/6, height: torpilleNode.size.width/6)
+        torpilleNode.position = CGPoint(x: 0, y: player.position.y + ((player.size.height) / 2) + 30)x
         
         torpilleNode.physicsBody = SKPhysicsBody(rectangleOf: torpilleNode!.size)
         torpilleNode.physicsBody?.isDynamic = true
