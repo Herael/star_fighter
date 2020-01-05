@@ -15,6 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return SpaceshipMockService()
     }
     
+    var playerSpaceship:Spaceship!
     var enemy:Spaceship!
     
     var starfield:SKEmitterNode!
@@ -22,13 +23,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player:SKSpriteNode!
     var HealthBarPlayer: SKSpriteNode!
     var lifePlayerLabel:SKLabelNode!
-    var lifePlayer:Int = 1
+    var lifePlayer:Int = 100
     
     var alien: SKSpriteNode!
     var possibleAliens = ["tie","falcon","starDestroyer"]
     var HealthBarEnemy: SKSpriteNode!
     var lifeAlienLabel:SKLabelNode!
-    var lifeAlien:Int = 1
+    var lifeAlien:Int = 100
     
     var torpilleNode: SKSpriteNode!
     
@@ -46,38 +47,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     starfield.advanceSimulationTime(10)
     self.addChild(starfield)
     starfield.zPosition = -1
-                    
-    
-//  Get url from API
-    let url = URL(string: "https://webstockreview.net/images1280_/falcon-clipart-millenium-falcon-11.png")
-    let data = try! Data(contentsOf: url!)
-    let image = UIImage(data: data)
-    let Texture = SKTexture(image: image!)
-    player = SKSpriteNode(texture: Texture)
-       // player = SKSpriteNode(imageNamed: "falcon")
-    player.name = "player"
-    
-    player.position = CGPoint(x: 0, y: -450)
-    player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
-    player.physicsBody?.isDynamic = true
-        //player.size = CGSize(width: player.size.width / 3, height: player.size.height / 3)
-    
-    player.physicsBody?.categoryBitMask = playerCategory
-    player.physicsBody?.contactTestBitMask = torpilleCategory
-    player.physicsBody?.collisionBitMask = 0
-    
-    self.addChild(player)
+            
     self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
     self.physicsWorld.contactDelegate = self
-    
-    
-    HealthBarPlayer = SKSpriteNode(color:SKColor .yellow, size: CGSize(width: lifePlayer, height: 30))
-    HealthBarPlayer.position = CGPoint(x: self.frame.width / -4.2, y: self.frame.height / -2.5)
-    HealthBarPlayer.zPosition = 1
-    self.addChild(HealthBarPlayer)
-    
-    
-    
+        
+    addPlayer()
     addAlien()
     gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
 
@@ -107,6 +81,42 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         torpilleNode?.run(SKAction.sequence(actionArray))
         
     }
+
+    
+    func addPlayer(){
+            
+        self.spaceshipService.getXWing { (Spaceship) in
+            guard let spaceship = Spaceship else {return}
+            self.playerSpaceship = spaceship
+        }
+        
+        if(self.playerSpaceship.img != nil) {
+            let data = try! Data(contentsOf: self.playerSpaceship.img!)
+            let image = UIImage(data: data)
+            let Texture = SKTexture(image: image!)
+            player = SKSpriteNode(texture: Texture)
+        } else {
+            player = SKSpriteNode(imageNamed: "falcon")
+        }
+                
+        player.size = CGSize(width: player.size.width/3, height: player.size.width/3)
+       
+        player.name = "player"
+        player.position = CGPoint(x: 0, y: -450)
+        player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
+        player.physicsBody?.isDynamic = true
+        
+        player.physicsBody?.categoryBitMask = playerCategory
+        player.physicsBody?.contactTestBitMask = torpilleCategory
+        player.physicsBody?.collisionBitMask = 0
+        
+        self.addChild(player)
+        
+        HealthBarPlayer = SKSpriteNode(color:SKColor .green, size: CGSize(width: lifePlayer, height: 30))
+        HealthBarPlayer.position = CGPoint(x: self.frame.width / -4.2, y: self.frame.height / -2.5)
+        HealthBarPlayer.zPosition = 1
+        self.addChild(HealthBarPlayer)
+    }
     
     func addAlien(){
         
@@ -124,10 +134,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             alien = SKSpriteNode(imageNamed: "falcon")
         }
         
-        
-//        possibleAliens = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleAliens) as! [String]
-//        alien = SKSpriteNode(imageNamed: possibleAliens[0])
-        
         alien.size = CGSize(width: alien.size.width/3, height: alien.size.width/3)
        
         alien.name = "alien"
@@ -140,11 +146,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody?.collisionBitMask = 0
         self.addChild(alien)
         
-        HealthBarEnemy = SKSpriteNode(color:SKColor .green, size: CGSize(width: 100, height: 30))
+        HealthBarEnemy = SKSpriteNode(color:SKColor .green, size: CGSize(width: lifeAlien, height: 30))
         HealthBarEnemy.position = CGPoint(x: self.frame.width / 4.2, y: self.frame.height/2.5)
         HealthBarEnemy.zPosition = 1
         self.addChild(HealthBarEnemy)
     }
+    
+    
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         fireTorpille()
@@ -195,29 +203,46 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (firstBody.categoryBitMask & torpilleCategory) != 0 &&  (secondBody.categoryBitMask & playerCategory) != 0 {
             tropilleDidColide(torpille: firstBody.node as! SKSpriteNode, alien: secondBody.node as! SKSpriteNode)
         }
-
     }
    
     func tropilleDidColide(torpille:SKSpriteNode,alien:SKSpriteNode){
-        let explosion = SKEmitterNode(fileNamed: "Explosion")
-        explosion!.position = alien.position
-        self.addChild(explosion!)
+//        let explosion = SKEmitterNode(fileNamed: "Explosion")
+//        explosion!.position = alien.position
+//        self.addChild(explosion!)
         
 //        self.run(SKAction.playSoundFileNamed("explosion.mp3", waitForCompletion: false))
         
         torpille.removeFromParent()
         self.run(SKAction.wait(forDuration: 2)) {
-            explosion?.removeFromParent()
+//            explosion?.removeFromParent()
         }
+        var percentBar = 0
         if(alien.name == "player"){
-            lifePlayer -= 10
+            percentBar = (enemy.damage*100) / playerSpaceship.hp
+            lifePlayer -= percentBar
             HealthBarPlayer.size = CGSize(width: lifePlayer, height: 30)
+            switch lifePlayer {
+            case ...0:
+                win = SKLabelNode(text: "LOOSER")
+                win.position = CGPoint(x: 0, y: 0)
+                win.fontName = "Zapfino"
+                win.fontSize = 50
+                win.color = UIColor.white
+                addChild(win)
+                self.scene?.view!.isPaused = true
+                break
+            case 1...30:
+                HealthBarPlayer.color = SKColor .red
+                break
+            case 31...50:
+                HealthBarPlayer.color = SKColor .yellow
+                break
+            default:
+                HealthBarPlayer.color = SKColor .green
+            }
         }else{
-            
-            lifeAlien -= 10
-//            TODOO
-//            let percentBar = (player.damage*100) / enemy.hp
-//            lifeAlien -= percentBar
+            percentBar = (playerSpaceship.damage*100) / enemy.hp
+            lifeAlien -= percentBar
             HealthBarEnemy.size = CGSize(width: lifeAlien, height: 30)
             switch lifeAlien {
             case ...0:

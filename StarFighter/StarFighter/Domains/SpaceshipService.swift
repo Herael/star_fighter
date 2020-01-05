@@ -14,6 +14,6 @@ protocol SpaceshipService {
     func getAll(completion: @escaping ([Spaceship]) -> Void)
     func getById(_ id: String, completion: @escaping (Spaceship?) -> Void)
     func getRandom(completion: @escaping (Spaceship?) -> Void)
-    
+    func getXWing(completion: @escaping (Spaceship?) -> Void)
 
 }
