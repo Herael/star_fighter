@@ -11,18 +11,24 @@ import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    var spaceshipService: SpaceshipService {
+        return SpaceshipMockService()
+    }
+    
+    var enemy:Spaceship!
+    
     var starfield:SKEmitterNode!
     
     var player:SKSpriteNode!
     var HealthBarPlayer: SKSpriteNode!
     var lifePlayerLabel:SKLabelNode!
-    var lifePlayer:Int = 500
+    var lifePlayer:Int = 1
     
     var alien: SKSpriteNode!
     var possibleAliens = ["tie","falcon","starDestroyer"]
     var HealthBarEnemy: SKSpriteNode!
     var lifeAlienLabel:SKLabelNode!
-    var lifeAlien:Int = 300
+    var lifeAlien:Int = 1
     
     var torpilleNode: SKSpriteNode!
     
@@ -103,8 +109,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addAlien(){
-        possibleAliens = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleAliens) as! [String]
-        alien = SKSpriteNode(imageNamed: possibleAliens[0])
+        
+        self.spaceshipService.getRandom { (Spaceship) in
+            guard let spaceship = Spaceship else {return}
+            self.enemy = spaceship
+        }
+        
+        if(self.enemy.img != nil) {
+            let data = try! Data(contentsOf: self.enemy.img!)
+            let image = UIImage(data: data)
+            let Texture = SKTexture(image: image!)
+            alien = SKSpriteNode(texture: Texture)
+        } else {
+            alien = SKSpriteNode(imageNamed: "falcon")
+        }
+        
+        
+//        possibleAliens = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleAliens) as! [String]
+//        alien = SKSpriteNode(imageNamed: possibleAliens[0])
+        
         alien.size = CGSize(width: alien.size.width/3, height: alien.size.width/3)
        
         alien.name = "alien"
@@ -116,11 +139,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody?.contactTestBitMask = torpilleCategory
         alien.physicsBody?.collisionBitMask = 0
         self.addChild(alien)
-        HealthBarEnemy = SKSpriteNode(color:SKColor .yellow, size: CGSize(width: lifeAlien, height: 30))
+        
+        HealthBarEnemy = SKSpriteNode(color:SKColor .green, size: CGSize(width: 100, height: 30))
         HealthBarEnemy.position = CGPoint(x: self.frame.width / 4.2, y: self.frame.height/2.5)
         HealthBarEnemy.zPosition = 1
         self.addChild(HealthBarEnemy)
-    
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -186,27 +209,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.run(SKAction.wait(forDuration: 2)) {
             explosion?.removeFromParent()
         }
-        if(alien.name == "player" ){
+        if(alien.name == "player"){
             lifePlayer -= 10
             HealthBarPlayer.size = CGSize(width: lifePlayer, height: 30)
         }else{
-            lifeAlien -= 150
-            HealthBarEnemy.size = CGSize(width: lifeAlien, height: 30)
-        }
-        
-        if(lifeAlien == 0){
-            win = SKLabelNode(text: "WIN")
-            win.position = CGPoint(x: 0, y: 0)
-            win.fontName = "Zapfino"
-            win.fontSize = 50
-            win.color = UIColor.white
-            addChild(win)
-            alien.removeFromParent()
-            //HealthBarEnemy.removeFromParent()
-            lifeAlien = 300
-            addAlien()
-            //self.scene?.view!.isPaused = true
             
+            lifeAlien -= 10
+//            TODOO
+//            let percentBar = (player.damage*100) / enemy.hp
+//            lifeAlien -= percentBar
+            HealthBarEnemy.size = CGSize(width: lifeAlien, height: 30)
+            switch lifeAlien {
+            case ...0:
+                alien.removeFromParent()
+                lifeAlien = 100
+                addAlien()
+                break
+            case 1...30:
+                HealthBarEnemy.color = SKColor .red
+                break
+            case 31...50:
+                HealthBarEnemy.color = SKColor .yellow
+                break
+            default:
+                HealthBarEnemy.color = SKColor .green
+            }
         }
     }
     

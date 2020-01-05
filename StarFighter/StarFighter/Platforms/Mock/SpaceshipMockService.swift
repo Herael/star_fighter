@@ -31,7 +31,7 @@ class SpaceshipMockService: SpaceshipService {
     }
     
     func getRandom(completion: @escaping (Spaceship?) -> Void) {
-        completion(self.spaceships[Int.random(in: 0 ..< self.spaceships.count)])
+        return completion(self.spaceships[Int.random(in: 0 ..< self.spaceships.count)])
     }
     
     
