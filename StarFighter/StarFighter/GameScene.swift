@@ -38,8 +38,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let torpilleCategory:UInt32 = 0x1 << 0
     let playerCategory:UInt32 = 0x1 << 2
     
+    var scoreLabel: SKLabelNode!
     var win: SKLabelNode!
 
+    var score:Int = 0
+    
     override func didMove(to view: SKView) {
      
     starfield = SKEmitterNode(fileNamed: "Starfield")
@@ -53,6 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     addPlayer()
     addAlien()
+    setScore(score)
     gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
 
 }
@@ -152,6 +156,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(HealthBarEnemy)
     }
     
+    func setScore(_: Int){
+        scoreLabel = SKLabelNode(text: String(score))
+        scoreLabel.position = CGPoint(x: 200, y: 0)
+        scoreLabel.fontName = "Zapfino"
+        scoreLabel.fontSize = 24
+        scoreLabel.color = UIColor.white
+        addChild(scoreLabel)
+    }
     
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -241,6 +253,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 HealthBarPlayer.color = SKColor .green
             }
         }else{
+            //bypass the limit of int (Remember call of duty black ops...)
+            guard let scoreValue = UInt64(scoreLabel.text!) else {return}
+            scoreLabel.text = String(scoreValue + UInt64(playerSpaceship.damage / 100))
             percentBar = (playerSpaceship.damage*100) / enemy.hp
             lifeAlien -= percentBar
             HealthBarEnemy.size = CGSize(width: lifeAlien, height: 30)
