@@ -23,7 +23,7 @@
 		59EFC3B623C21DD8001D37F4 /* SpaceshipMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */; };
 		59EFC3B923C21E0D001D37F4 /* Spaceship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3B823C21E0D001D37F4 /* Spaceship.swift */; };
 		59EFC3BB23C21E1C001D37F4 /* SpaceshipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */; };
-		FF343944EECEA31DFEF0AE54 /* Pods_StarFighter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128386F583CC21BD28FD36A8 /* Pods_StarFighter.framework */; };
+		CED6BF5523C8FEE400A2EEE6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED6BF5723C8FEE400A2EEE6 /* Localizable.strings */; };
 		CEEDE3E323C251260005E7C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3E123C251260005E7C7 /* HomeViewController.swift */; };
 		CEEDE3E423C251260005E7C7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3E223C251260005E7C7 /* HomeViewController.xib */; };
 		CEEDE3EC23C252E70005E7C7 /* StarshipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EA23C252E70005E7C7 /* StarshipTableViewController.swift */; };
@@ -32,6 +32,7 @@
 		CEEDE3F123C254930005E7C7 /* StarshipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3EF23C254930005E7C7 /* StarshipTableViewCell.xib */; };
 		CEEDE3F423C25A880005E7C7 /* StarshipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3F223C25A880005E7C7 /* StarshipDetailViewController.swift */; };
 		CEEDE3F523C25A880005E7C7 /* StarshipDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3F323C25A880005E7C7 /* StarshipDetailViewController.xib */; };
+		FF343944EECEA31DFEF0AE54 /* Pods_StarFighter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128386F583CC21BD28FD36A8 /* Pods_StarFighter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +56,10 @@
 		59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipMockService.swift; sourceTree = "<group>"; };
 		59EFC3B823C21E0D001D37F4 /* Spaceship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spaceship.swift; sourceTree = "<group>"; };
 		59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipService.swift; sourceTree = "<group>"; };
-		F279764D71AEE228274759B6 /* Pods-StarFighter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarFighter.debug.xcconfig"; path = "Target Support Files/Pods-StarFighter/Pods-StarFighter.debug.xcconfig"; sourceTree = "<group>"; };
+		CED6BF4723C8FBCC00A2EEE6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		CED6BF4823C8FBCC00A2EEE6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CED6BF5623C8FEE400A2EEE6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CED6BF5823C8FEE600A2EEE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CEEDE3E123C251260005E7C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEEDE3E223C251260005E7C7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CEEDE3EA23C252E70005E7C7 /* StarshipTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipTableViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 		CEEDE3EF23C254930005E7C7 /* StarshipTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipTableViewCell.xib; sourceTree = "<group>"; };
 		CEEDE3F223C25A880005E7C7 /* StarshipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipDetailViewController.swift; sourceTree = "<group>"; };
 		CEEDE3F323C25A880005E7C7 /* StarshipDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipDetailViewController.xib; sourceTree = "<group>"; };
+		F279764D71AEE228274759B6 /* Pods-StarFighter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarFighter.debug.xcconfig"; path = "Target Support Files/Pods-StarFighter/Pods-StarFighter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				59B5AF1D23C0CD19006A849B /* StarFighter */,
+				CED6BF4B23C8FC5600A2EEE6 /* New Group */,
 				59B5AF1C23C0CD19006A849B /* Products */,
 				84122C12BBF7C49AC2A8C32C /* Pods */,
 				CC5C7747CC768C99530FBA2E /* Frameworks */,
@@ -102,8 +108,6 @@
 				59EFC3B723C21DFD001D37F4 /* Domains */,
 				59EFC3B123C21D9E001D37F4 /* Platforms */,
 				59EFC39F23C200D4001D37F4 /* soundEffects */,
-				CEEDE3D623C21C520005E7C7 /* Platforms */,
-				CEEDE3D723C21C660005E7C7 /* Domains */,
 				CEEDE3D823C21C730005E7C7 /* Scenes */,
 				59B5AF1E23C0CD19006A849B /* AppDelegate.swift */,
 				59B5AF2023C0CD19006A849B /* GameScene.sks */,
@@ -116,6 +120,7 @@
 				59B5AF2B23C0CD1B006A849B /* Assets.xcassets */,
 				59B5AF2D23C0CD1B006A849B /* LaunchScreen.storyboard */,
 				59B5AF3023C0CD1B006A849B /* Info.plist */,
+				CED6BF5723C8FEE400A2EEE6 /* Localizable.strings */,
 			);
 			path = StarFighter;
 			sourceTree = "<group>";
@@ -172,18 +177,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CEEDE3D623C21C520005E7C7 /* Platforms */ = {
+		CED6BF4B23C8FC5600A2EEE6 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Platforms;
-			sourceTree = "<group>";
-		};
-		CEEDE3D723C21C660005E7C7 /* Domains */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domains;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		CEEDE3D823C21C730005E7C7 /* Scenes */ = {
@@ -261,6 +259,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 59B5AF1223C0CD19006A849B;
 			productRefGroup = 59B5AF1C23C0CD19006A849B /* Products */;
@@ -287,6 +286,7 @@
 				CEEDE3F123C254930005E7C7 /* StarshipTableViewCell.xib in Resources */,
 				59B5AF2F23C0CD1B006A849B /* LaunchScreen.storyboard in Resources */,
 				59EFC39D23C1FF9A001D37F4 /* Explosion.sks in Resources */,
+				CED6BF5523C8FEE400A2EEE6 /* Localizable.strings in Resources */,
 				59EFC3A123C20132001D37F4 /* XWing_fire.mp3 in Resources */,
 				CEEDE3E423C251260005E7C7 /* HomeViewController.xib in Resources */,
 				59B5AF2323C0CD19006A849B /* Actions.sks in Resources */,
@@ -363,6 +363,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				59B5AF2923C0CD19006A849B /* Base */,
+				CED6BF4723C8FBCC00A2EEE6 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -371,8 +372,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				59B5AF2E23C0CD1B006A849B /* Base */,
+				CED6BF4823C8FBCC00A2EEE6 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CED6BF5723C8FEE400A2EEE6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CED6BF5623C8FEE400A2EEE6 /* fr */,
+				CED6BF5823C8FEE600A2EEE6 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -382,6 +393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -442,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

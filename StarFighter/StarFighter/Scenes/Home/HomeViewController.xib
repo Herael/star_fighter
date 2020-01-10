@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="StarFighter" customModuleProvider="target">
             <connections>
+                <outlet property="BTN_create_account" destination="Var-h1-OiE" id="Lht-Pr-aue"/>
+                <outlet property="BTN_sign_in" destination="jVc-Uk-brk" id="wYs-FS-iq3"/>
                 <outlet property="view" destination="8ug-Lb-SMO" id="ZFt-NO-j6U"/>
             </connections>
         </placeholder>
@@ -37,7 +39,7 @@
                         <constraint firstAttribute="height" constant="34" id="ocu-zD-hxs"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0N-wc-hkc">
                     <rect key="frame" x="273.5" y="464" width="70.5" height="20"/>
@@ -63,6 +65,9 @@
                     <state key="normal" title="SIGN IN">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="sign_in:" destination="-1" eventType="touchUpInside" id="HIv-SD-Vdb"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Var-h1-OiE">
                     <rect key="frame" x="87" y="741" width="240" height="32"/>
@@ -73,6 +78,9 @@
                     <state key="normal" title="Don't have an account? Click here!">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="create_account:" destination="-1" eventType="touchUpInside" id="HJB-Ms-KJu"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  StarFighter
+
+  Created by Fabiana Montiel on 10/01/2020.
+  Copyright © 2020 StarFighter. All rights reserved.
+*/
+"sign_in" = "SE CONNECTER";
+"create_account" = "Vous n'avez pas de compte? Cliquez ici!";

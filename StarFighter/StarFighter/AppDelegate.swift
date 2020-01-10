@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = UINavigationController(rootViewController: HomeViewController())
+        //window.rootViewController = UINavigationController(rootViewController: StarshipTableViewController())
         window.makeKeyAndVisible()
         self.window = window
         

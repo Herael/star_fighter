@@ -10,20 +10,44 @@ import UIKit
 
 class StarshipTableViewController: UITableViewController {
         
-    @IBOutlet var starshipsTableView: UITableView!
-    
+    public static let StarshipTableViewCellId = "rtvc"
+    @IBOutlet var starshipTableView: UITableView!
+    var spaceships: [Spaceship] = [] {
+        didSet {
+            self.starshipTableView.reloadData()
+        }
+    }
+    var spaceshipService: SpaceshipService {
+        return SpaceshipMockService()
+        //return RestaurantAPIService()
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.starshipTableView.rowHeight = 120
+        self.starshipTableView.register(UINib(nibName: "StarshipTableViewCell", bundle: nil), forCellReuseIdentifier: StarshipTableViewController.StarshipTableViewCellId)
+        self.starshipTableView.dataSource = self
+        self.starshipTableView.delegate = self
+        /*self.navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(touchAddButton))
+        ]*/
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.spaceshipService.getAll { (spaceships) in
+            self.spaceships = spaceships
+        }
+    }
+   
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,19 +56,31 @@ class StarshipTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.spaceships.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: StarshipTableViewController.StarshipTableViewCellId, for: indexPath) as! StarshipTableViewCell
+        let spaceship = self.spaceships[indexPath.row]
+        cell.starshipName.text = spaceship.name
+        cell.damage.text = String(spaceship.damage)
+        cell.starshipImage.image = nil // restore default image
+        /*if let pictureURL = restaurant.pictureURL {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: pictureURL) {
+                    DispatchQueue.main.sync {
+                        cell.pictureImageView.image = UIImage(data: data)
+                    }
+                }
+            }
+        }*/
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

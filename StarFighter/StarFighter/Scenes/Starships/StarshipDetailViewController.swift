@@ -10,6 +10,14 @@ import UIKit
 
 class StarshipDetailViewController: UIViewController {
 
+    @IBOutlet var spaceshipImage: UIImageView!
+    @IBOutlet var spaceshipName: UILabel!
+    @IBOutlet var spaceshipModel: UILabel!
+    @IBOutlet var spaceshipSpeed: UILabel!
+    @IBOutlet var spaceshipHP: UILabel!
+    @IBOutlet var spaceshipDamage: UILabel!
+    @IBOutlet var spaceshipClass: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
