@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="96" id="KGk-i7-Jjw" customClass="StarshipTableViewCell" customModule="StarFighter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Starship" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGh-mx-s8z">
+                        <rect key="frame" x="10" y="3" width="113" height="60"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3j-la-Go0">
+                        <rect key="frame" x="10" y="69" width="113" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CLf-qZ-1oG">
+                        <rect key="frame" x="126" y="3" width="130" height="90"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIU-1Q-ugt">
+                        <rect key="frame" x="260" y="33" width="53" height="30"/>
+                        <state key="normal" title="PLAY"/>
+                        <connections>
+                            <action selector="playButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eJI-4C-WjN"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JIU-1Q-ugt" firstAttribute="leading" secondItem="CLf-qZ-1oG" secondAttribute="trailing" constant="4" id="2aH-5N-DpR"/>
+                    <constraint firstAttribute="trailing" secondItem="JIU-1Q-ugt" secondAttribute="trailing" constant="7" id="2hh-Vz-suE"/>
+                    <constraint firstAttribute="bottom" secondItem="T3j-la-Go0" secondAttribute="bottom" constant="6" id="5EF-u1-2gc"/>
+                    <constraint firstItem="qGh-mx-s8z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="84B-r7-7cW"/>
+                    <constraint firstItem="CLf-qZ-1oG" firstAttribute="leading" secondItem="T3j-la-Go0" secondAttribute="trailing" constant="3" id="CaD-Bz-sjD"/>
+                    <constraint firstItem="CLf-qZ-1oG" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="31" id="EuZ-ZA-loa"/>
+                    <constraint firstAttribute="bottom" secondItem="JIU-1Q-ugt" secondAttribute="bottom" constant="33" id="Qf8-hM-tzT"/>
+                    <constraint firstItem="qGh-mx-s8z" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="RUQ-nW-9Ty"/>
+                    <constraint firstAttribute="trailing" secondItem="CLf-qZ-1oG" secondAttribute="trailing" constant="64" id="S2c-Ji-k73"/>
+                    <constraint firstItem="CLf-qZ-1oG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="VMw-OD-T0b"/>
+                    <constraint firstItem="T3j-la-Go0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="aO3-tT-HQP"/>
+                    <constraint firstItem="T3j-la-Go0" firstAttribute="top" secondItem="qGh-mx-s8z" secondAttribute="bottom" constant="6" id="fcD-de-7E4"/>
+                    <constraint firstAttribute="bottom" secondItem="CLf-qZ-1oG" secondAttribute="bottom" constant="3" id="kkb-et-SUp"/>
+                    <constraint firstItem="CLf-qZ-1oG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="126" id="nwH-v4-hwv"/>
+                    <constraint firstItem="CLf-qZ-1oG" firstAttribute="leading" secondItem="qGh-mx-s8z" secondAttribute="trailing" constant="3" id="vNp-WZ-YHD"/>
+                    <constraint firstItem="JIU-1Q-ugt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="33" id="woq-ce-uLs"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="damage" destination="T3j-la-Go0" id="tf1-rm-le5"/>
+                <outlet property="starshipImage" destination="CLf-qZ-1oG" id="ymr-c4-D3T"/>
+                <outlet property="starshipName" destination="qGh-mx-s8z" id="abI-x9-KhZ"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="145.98214285714286"/>
+        </tableViewCell>
+    </objects>
+</document>
