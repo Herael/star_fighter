@@ -80,10 +80,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //    }
                 
     @objc func enemyFire(){
-        //self.run(SKAction.playSoundFileNamed("TIE_fire.mp3", waitForCompletion: false))
+        self.run(SKAction.playSoundFileNamed("TIE_fire.mp3", waitForCompletion: false))
         
-        torpilleNode = SKSpriteNode(imageNamed: "torpedo")
-        torpilleNode.size = CGSize(width: torpilleNode.size.width/3, height: torpilleNode.size.width/3)
+        torpilleNode = SKSpriteNode(imageNamed: "laser")
+        torpilleNode.size = CGSize(width: torpilleNode.size.width/6, height: torpilleNode.size.width/6)
         torpilleNode.position = CGPoint(x: alien.position.x, y: alien.position.y - alien.size.height)
         torpilleNode.position.y += 5
         torpilleNode.physicsBody = SKPhysicsBody(rectangleOf: torpilleNode!.size)
@@ -183,6 +183,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         fireTorpille()
     }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
     }
@@ -199,7 +200,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func fireTorpille(){
-        //self.run(SKAction.playSoundFileNamed("XWing_fire.mp3", waitForCompletion: false))
+        self.run(SKAction.playSoundFileNamed("XWing_fire.mp3", waitForCompletion: false))
         
         torpilleNode = SKSpriteNode(imageNamed: "laser")
         torpilleNode.size = CGSize(width: torpilleNode.size.width/6, height: torpilleNode.size.width/6)
@@ -246,15 +247,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
    
     func tropilleDidColide(torpille:SKSpriteNode,alien:SKSpriteNode){
-//        let explosion = SKEmitterNode(fileNamed: "Explosion")
-//        explosion!.position = alien.position
-//        self.addChild(explosion!)
+        let explosion = SKEmitterNode(fileNamed: "Explosion")
+        explosion!.position = alien.position
+        self.addChild(explosion!)
         
-//        self.run(SKAction.playSoundFileNamed("explosion.mp3", waitForCompletion: false))
+        self.run(SKAction.playSoundFileNamed("explosion.mp3", waitForCompletion: false))
         
         torpille.removeFromParent()
         self.run(SKAction.wait(forDuration: 2)) {
-//            explosion?.removeFromParent()
+            explosion?.removeFromParent()
         }
         var percentBar = 0
         if(alien.name == "player"){
