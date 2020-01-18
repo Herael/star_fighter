@@ -23,6 +23,8 @@
 		59EFC3B623C21DD8001D37F4 /* SpaceshipMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */; };
 		59EFC3B923C21E0D001D37F4 /* Spaceship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3B823C21E0D001D37F4 /* Spaceship.swift */; };
 		59EFC3BB23C21E1C001D37F4 /* SpaceshipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */; };
+		96F7CDF323D3580300946F78 /* StarshipListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7CDF123D3580300946F78 /* StarshipListViewController.swift */; };
+		96F7CDF423D3580300946F78 /* StarshipListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F7CDF223D3580300946F78 /* StarshipListViewController.xib */; };
 		CED6BF5523C8FEE400A2EEE6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED6BF5723C8FEE400A2EEE6 /* Localizable.strings */; };
 		CEEDE3E323C251260005E7C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3E123C251260005E7C7 /* HomeViewController.swift */; };
 		CEEDE3E423C251260005E7C7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3E223C251260005E7C7 /* HomeViewController.xib */; };
@@ -56,6 +58,8 @@
 		59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipMockService.swift; sourceTree = "<group>"; };
 		59EFC3B823C21E0D001D37F4 /* Spaceship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spaceship.swift; sourceTree = "<group>"; };
 		59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipService.swift; sourceTree = "<group>"; };
+		96F7CDF123D3580300946F78 /* StarshipListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipListViewController.swift; sourceTree = "<group>"; };
+		96F7CDF223D3580300946F78 /* StarshipListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipListViewController.xib; sourceTree = "<group>"; };
 		CED6BF4723C8FBCC00A2EEE6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		CED6BF4823C8FBCC00A2EEE6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CED6BF5623C8FEE400A2EEE6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				CEEDE3EF23C254930005E7C7 /* StarshipTableViewCell.xib */,
 				CEEDE3F223C25A880005E7C7 /* StarshipDetailViewController.swift */,
 				CEEDE3F323C25A880005E7C7 /* StarshipDetailViewController.xib */,
+				96F7CDF123D3580300946F78 /* StarshipListViewController.swift */,
+				96F7CDF223D3580300946F78 /* StarshipListViewController.xib */,
 			);
 			path = Starships;
 			sourceTree = "<group>";
@@ -284,6 +290,7 @@
 				59EFC3A323C20141001D37F4 /* TIE_fire.mp3 in Resources */,
 				CEEDE3F523C25A880005E7C7 /* StarshipDetailViewController.xib in Resources */,
 				CEEDE3F123C254930005E7C7 /* StarshipTableViewCell.xib in Resources */,
+				96F7CDF423D3580300946F78 /* StarshipListViewController.xib in Resources */,
 				59B5AF2F23C0CD1B006A849B /* LaunchScreen.storyboard in Resources */,
 				59EFC39D23C1FF9A001D37F4 /* Explosion.sks in Resources */,
 				CED6BF5523C8FEE400A2EEE6 /* Localizable.strings in Resources */,
@@ -351,6 +358,7 @@
 				59B5AF2723C0CD19006A849B /* GameViewController.swift in Sources */,
 				59B5AF1F23C0CD19006A849B /* AppDelegate.swift in Sources */,
 				59EFC3BB23C21E1C001D37F4 /* SpaceshipService.swift in Sources */,
+				96F7CDF323D3580300946F78 /* StarshipListViewController.swift in Sources */,
 				59EFC3B923C21E0D001D37F4 /* Spaceship.swift in Sources */,
 				CEEDE3F023C254930005E7C7 /* StarshipTableViewCell.swift in Sources */,
 			);
