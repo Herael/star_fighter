@@ -12,9 +12,7 @@
 		59B5AF2323C0CD19006A849B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59B5AF2223C0CD19006A849B /* Actions.sks */; };
 		59B5AF2523C0CD19006A849B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B5AF2423C0CD19006A849B /* GameScene.swift */; };
 		59B5AF2723C0CD19006A849B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B5AF2623C0CD19006A849B /* GameViewController.swift */; };
-		59B5AF2A23C0CD19006A849B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B5AF2823C0CD19006A849B /* Main.storyboard */; };
 		59B5AF2C23C0CD1B006A849B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59B5AF2B23C0CD1B006A849B /* Assets.xcassets */; };
-		59B5AF2F23C0CD1B006A849B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B5AF2D23C0CD1B006A849B /* LaunchScreen.storyboard */; };
 		59EFC39B23C1FF90001D37F4 /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59EFC39A23C1FF90001D37F4 /* Starfield.sks */; };
 		59EFC39D23C1FF9A001D37F4 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59EFC39C23C1FF99001D37F4 /* Explosion.sks */; };
 		59EFC3A123C20132001D37F4 /* XWing_fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 59EFC3A023C20132001D37F4 /* XWing_fire.mp3 */; };
@@ -25,11 +23,11 @@
 		59EFC3BB23C21E1C001D37F4 /* SpaceshipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */; };
 		96F7CDF323D3580300946F78 /* StarshipListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F7CDF123D3580300946F78 /* StarshipListViewController.swift */; };
 		96F7CDF423D3580300946F78 /* StarshipListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96F7CDF223D3580300946F78 /* StarshipListViewController.xib */; };
+		CE74D94B23DB6AD10059EA72 /* SpaceshipAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE74D94A23DB6AD10059EA72 /* SpaceshipAPIService.swift */; };
+		CE74D94D23DB74F00059EA72 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE74D94C23DB74F00059EA72 /* Launch Screen.storyboard */; };
 		CED6BF5523C8FEE400A2EEE6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED6BF5723C8FEE400A2EEE6 /* Localizable.strings */; };
 		CEEDE3E323C251260005E7C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3E123C251260005E7C7 /* HomeViewController.swift */; };
 		CEEDE3E423C251260005E7C7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3E223C251260005E7C7 /* HomeViewController.xib */; };
-		CEEDE3EC23C252E70005E7C7 /* StarshipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EA23C252E70005E7C7 /* StarshipTableViewController.swift */; };
-		CEEDE3ED23C252E70005E7C7 /* StarshipTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3EB23C252E70005E7C7 /* StarshipTableViewController.xib */; };
 		CEEDE3F023C254930005E7C7 /* StarshipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EE23C254920005E7C7 /* StarshipTableViewCell.swift */; };
 		CEEDE3F123C254930005E7C7 /* StarshipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3EF23C254930005E7C7 /* StarshipTableViewCell.xib */; };
 		CEEDE3F423C25A880005E7C7 /* StarshipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3F223C25A880005E7C7 /* StarshipDetailViewController.swift */; };
@@ -46,9 +44,7 @@
 		59B5AF2223C0CD19006A849B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		59B5AF2423C0CD19006A849B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		59B5AF2623C0CD19006A849B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		59B5AF2923C0CD19006A849B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59B5AF2B23C0CD1B006A849B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		59B5AF2E23C0CD1B006A849B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59B5AF3023C0CD1B006A849B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59EFC39A23C1FF90001D37F4 /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Starfield.sks; path = ../../../starfighterTest/Starfighter/Starfighter/Starfield.sks; sourceTree = "<group>"; };
 		59EFC39C23C1FF99001D37F4 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Explosion.sks; path = ../../../starfighterTest/Starfighter/Starfighter/Explosion.sks; sourceTree = "<group>"; };
@@ -60,14 +56,12 @@
 		59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipService.swift; sourceTree = "<group>"; };
 		96F7CDF123D3580300946F78 /* StarshipListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipListViewController.swift; sourceTree = "<group>"; };
 		96F7CDF223D3580300946F78 /* StarshipListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipListViewController.xib; sourceTree = "<group>"; };
-		CED6BF4723C8FBCC00A2EEE6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		CED6BF4823C8FBCC00A2EEE6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CE74D94A23DB6AD10059EA72 /* SpaceshipAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipAPIService.swift; sourceTree = "<group>"; };
+		CE74D94C23DB74F00059EA72 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CED6BF5623C8FEE400A2EEE6 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CED6BF5823C8FEE600A2EEE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CEEDE3E123C251260005E7C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEEDE3E223C251260005E7C7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		CEEDE3EA23C252E70005E7C7 /* StarshipTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipTableViewController.swift; sourceTree = "<group>"; };
-		CEEDE3EB23C252E70005E7C7 /* StarshipTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipTableViewController.xib; sourceTree = "<group>"; };
 		CEEDE3EE23C254920005E7C7 /* StarshipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipTableViewCell.swift; sourceTree = "<group>"; };
 		CEEDE3EF23C254930005E7C7 /* StarshipTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipTableViewCell.xib; sourceTree = "<group>"; };
 		CEEDE3F223C25A880005E7C7 /* StarshipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipDetailViewController.swift; sourceTree = "<group>"; };
@@ -120,11 +114,10 @@
 				59EFC39C23C1FF99001D37F4 /* Explosion.sks */,
 				59B5AF2423C0CD19006A849B /* GameScene.swift */,
 				59B5AF2623C0CD19006A849B /* GameViewController.swift */,
-				59B5AF2823C0CD19006A849B /* Main.storyboard */,
 				59B5AF2B23C0CD1B006A849B /* Assets.xcassets */,
-				59B5AF2D23C0CD1B006A849B /* LaunchScreen.storyboard */,
 				59B5AF3023C0CD1B006A849B /* Info.plist */,
 				CED6BF5723C8FEE400A2EEE6 /* Localizable.strings */,
+				CE74D94C23DB74F00059EA72 /* Launch Screen.storyboard */,
 			);
 			path = StarFighter;
 			sourceTree = "<group>";
@@ -142,6 +135,7 @@
 		59EFC3B123C21D9E001D37F4 /* Platforms */ = {
 			isa = PBXGroup;
 			children = (
+				CE74D94423D6F8A90059EA72 /* API */,
 				59EFC3B223C21DB4001D37F4 /* Mock */,
 			);
 			path = Platforms;
@@ -181,6 +175,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE74D94423D6F8A90059EA72 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				CE74D94A23DB6AD10059EA72 /* SpaceshipAPIService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		CED6BF4B23C8FC5600A2EEE6 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,8 +211,6 @@
 		CEEDE3E523C251AB0005E7C7 /* Starships */ = {
 			isa = PBXGroup;
 			children = (
-				CEEDE3EA23C252E70005E7C7 /* StarshipTableViewController.swift */,
-				CEEDE3EB23C252E70005E7C7 /* StarshipTableViewController.xib */,
 				CEEDE3EE23C254920005E7C7 /* StarshipTableViewCell.swift */,
 				CEEDE3EF23C254930005E7C7 /* StarshipTableViewCell.xib */,
 				CEEDE3F223C25A880005E7C7 /* StarshipDetailViewController.swift */,
@@ -283,21 +283,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				59EFC39B23C1FF90001D37F4 /* Starfield.sks in Resources */,
-				59B5AF2A23C0CD19006A849B /* Main.storyboard in Resources */,
 				59B5AF2123C0CD19006A849B /* GameScene.sks in Resources */,
 				59B5AF2C23C0CD1B006A849B /* Assets.xcassets in Resources */,
 				59EFC3A523C2049C001D37F4 /* explosion.mp3 in Resources */,
 				59EFC3A323C20141001D37F4 /* TIE_fire.mp3 in Resources */,
 				CEEDE3F523C25A880005E7C7 /* StarshipDetailViewController.xib in Resources */,
+				CE74D94D23DB74F00059EA72 /* Launch Screen.storyboard in Resources */,
 				CEEDE3F123C254930005E7C7 /* StarshipTableViewCell.xib in Resources */,
 				96F7CDF423D3580300946F78 /* StarshipListViewController.xib in Resources */,
-				59B5AF2F23C0CD1B006A849B /* LaunchScreen.storyboard in Resources */,
 				59EFC39D23C1FF9A001D37F4 /* Explosion.sks in Resources */,
 				CED6BF5523C8FEE400A2EEE6 /* Localizable.strings in Resources */,
 				59EFC3A123C20132001D37F4 /* XWing_fire.mp3 in Resources */,
 				CEEDE3E423C251260005E7C7 /* HomeViewController.xib in Resources */,
 				59B5AF2323C0CD19006A849B /* Actions.sks in Resources */,
-				CEEDE3ED23C252E70005E7C7 /* StarshipTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,11 +349,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				59EFC3B623C21DD8001D37F4 /* SpaceshipMockService.swift in Sources */,
-				CEEDE3EC23C252E70005E7C7 /* StarshipTableViewController.swift in Sources */,
 				CEEDE3F423C25A880005E7C7 /* StarshipDetailViewController.swift in Sources */,
 				CEEDE3E323C251260005E7C7 /* HomeViewController.swift in Sources */,
 				59B5AF2523C0CD19006A849B /* GameScene.swift in Sources */,
 				59B5AF2723C0CD19006A849B /* GameViewController.swift in Sources */,
+				CE74D94B23DB6AD10059EA72 /* SpaceshipAPIService.swift in Sources */,
 				59B5AF1F23C0CD19006A849B /* AppDelegate.swift in Sources */,
 				59EFC3BB23C21E1C001D37F4 /* SpaceshipService.swift in Sources */,
 				96F7CDF323D3580300946F78 /* StarshipListViewController.swift in Sources */,
@@ -367,24 +365,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		59B5AF2823C0CD19006A849B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				59B5AF2923C0CD19006A849B /* Base */,
-				CED6BF4723C8FBCC00A2EEE6 /* fr */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		59B5AF2D23C0CD1B006A849B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				59B5AF2E23C0CD1B006A849B /* Base */,
-				CED6BF4823C8FBCC00A2EEE6 /* fr */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		CED6BF5723C8FEE400A2EEE6 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

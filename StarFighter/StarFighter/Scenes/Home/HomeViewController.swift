@@ -10,8 +10,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet var BTN_sign_in: UIButton!
-    @IBOutlet var BTN_create_account: UIButton!
+    @IBOutlet var btn_sign_in: UIButton!
+    
+    @IBOutlet var btn_create_account: UIButton!
+    
     
     @IBAction func sign_in(_ sender: Any) {
         
@@ -30,9 +32,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        btn_sign_in.setTitle(NSLocalizedString("sign_in", comment: ""), for: .normal)
         
-        BTN_sign_in.titleLabel!.text = NSLocalizedString("sign_in", comment: "")
-        BTN_create_account.titleLabel!.text = NSLocalizedString("create_account", comment: "")
+        btn_create_account.setTitle(NSLocalizedString("create_account", comment: ""), for: .normal)
     }
 
 

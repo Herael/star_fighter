@@ -12,7 +12,7 @@ class StarshipListViewController: UIViewController {
     public static let StarshipListViewController = "rtvc"
      
      @IBOutlet var starshipTableView: UITableView!
-    public static var starshipCellId = "STARSHIP_ID"
+     public static var starshipCellId = "STARSHIP_ID"
      var spaceships: [Spaceship] = [] {
          didSet {
              self.starshipTableView.reloadData()
@@ -74,16 +74,16 @@ extension StarshipListViewController: UITableViewDataSource {
         print("yoyoy")
         cell.starshipName.text = spaceship.name
         cell.damage.text = String(spaceship.damage)
-        cell.starshipImage.image = nil // restore default image
-        /*if let pictureURL = restaurant.pictureURL {
+        //cell.starshipImage.image = nil // restore default image
+        if let pictureURL = spaceship.img {
             DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: pictureURL) {
                     DispatchQueue.main.sync {
-                        cell.pictureImageView.image = UIImage(data: data)
+                        cell.starshipImage.image = UIImage(data: data)
                     }
                 }
             }
-        }*/
+        }
         return cell
     }
     
