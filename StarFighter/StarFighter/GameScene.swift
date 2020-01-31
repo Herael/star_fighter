@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import  CoreMotion
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -20,7 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var starfield:SKEmitterNode!
     
-    var player:SKSpriteNode!
+    var player: SKSpriteNode!
     var HealthBarPlayer: SKSpriteNode!
     var lifePlayerLabel:SKLabelNode!
     var lifePlayer:Int = 100
@@ -38,10 +39,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let torpilleCategory:UInt32 = 0x1 << 0
     let playerCategory:UInt32 = 0x1 << 2
     
+    let motionManager = CMMotionManager()
+    var xAcceleration:CGFloat = 0
     var win: SKLabelNode!
 
     override func didMove(to view: SKView) {
-     
     starfield = SKEmitterNode(fileNamed: "Starfield")
     starfield.position = CGPoint(x: 0, y: 1472)
     starfield.advanceSimulationTime(10)
@@ -54,15 +56,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     addPlayer()
     addAlien()
     gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
+        
 
+        // deplacement tilt du telephone
+//        motionManager.accelerometerUpdateInterval = 0.2
+//        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data:CMAccelerometerData?, error:Error?) in
+//            if let accelerometerData = data {
+//                let acceleration = accelerometerData.acceleration
+//                self.xAcceleration = CGFloat(acceleration.x) * 0.75 + self.xAcceleration * 0.25
+//            }
+//        }
 }
+    
+    
+  // deplacement tilt du telephone
+//    override func didSimulatePhysics() {
+//        player.position.x += xAcceleration * 50
+//        if player.position.x < -20 {
+//            player.position = CGPoint(x: self.size.width + 20, y: player.position.y)
+//        }else if player.position.x > self.size.width + 20 {
+//            player.position = CGPoint(x: -20, y: player.position.y)
+//        }
+//    }
                 
     @objc func enemyFire(){
-        //self.run(SKAction.playSoundFileNamed("TIE_fire.mp3", waitForCompletion: false))
+        self.run(SKAction.playSoundFileNamed("TIE_fire.mp3", waitForCompletion: false))
         
-        torpilleNode = SKSpriteNode(imageNamed: "torpedo")
-        torpilleNode.size = CGSize(width: torpilleNode.size.width/3, height: torpilleNode.size.width/3)
-        torpilleNode.position = CGPoint(x: 0, y: alien.position.y - alien.size.height)
+        torpilleNode = SKSpriteNode(imageNamed: "laser")
+        torpilleNode.size = CGSize(width: torpilleNode.size.width/6, height: torpilleNode.size.width/6)
+        torpilleNode.position = CGPoint(x: alien.position.x, y: alien.position.y - alien.size.height)
         torpilleNode.position.y += 5
         torpilleNode.physicsBody = SKPhysicsBody(rectangleOf: torpilleNode!.size)
         torpilleNode.physicsBody?.isDynamic = true
@@ -76,7 +98,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let animationDuration:TimeInterval = 1
 
         var actionArray = [SKAction]()
-        actionArray.append(SKAction.move(to: CGPoint(x: alien.position.x, y: player.position.y + 50), duration: animationDuration))
+        actionArray.append(SKAction.move(to: CGPoint(x: alien.position.x, y: -450), duration: animationDuration))
         actionArray.append(SKAction.removeFromParent())
         torpilleNode?.run(SKAction.sequence(actionArray))
         
@@ -86,36 +108,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addPlayer(){
             
         self.spaceshipService.getXWing { (Spaceship) in
-            guard let spaceship = Spaceship else {return}
-            self.playerSpaceship = spaceship
-        }
+             guard let spaceship = Spaceship else {return}
+             self.playerSpaceship = spaceship
+         }
+         
+         if(self.playerSpaceship.img != nil) {
+             let data = try! Data(contentsOf: self.playerSpaceship.img!)
+             let image = UIImage(data: data)
+             let Texture = SKTexture(image: image!)
+             player = SKSpriteNode(texture: Texture)
+         } else {
+             player = SKSpriteNode(imageNamed: "falcon")
+         }
+         
+         player.size = CGSize(width: player.size.width/10, height: player.size.width/10)
         
-        if(self.playerSpaceship.img != nil) {
-            let data = try! Data(contentsOf: self.playerSpaceship.img!)
-            let image = UIImage(data: data)
-            let Texture = SKTexture(image: image!)
-            player = SKSpriteNode(texture: Texture)
-        } else {
-            player = SKSpriteNode(imageNamed: "falcon")
-        }
-                
-        player.size = CGSize(width: player.size.width/3, height: player.size.width/3)
-       
-        player.name = "player"
-        player.position = CGPoint(x: 0, y: -450)
-        player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
-        player.physicsBody?.isDynamic = true
-        
-        player.physicsBody?.categoryBitMask = playerCategory
-        player.physicsBody?.contactTestBitMask = torpilleCategory
-        player.physicsBody?.collisionBitMask = 0
-        
-        self.addChild(player)
-        
-        HealthBarPlayer = SKSpriteNode(color:SKColor .green, size: CGSize(width: lifePlayer, height: 30))
-        HealthBarPlayer.position = CGPoint(x: self.frame.width / -4.2, y: self.frame.height / -2.5)
-        HealthBarPlayer.zPosition = 1
-        self.addChild(HealthBarPlayer)
+         player.name = "player"
+         player.position = CGPoint(x: 0, y: -450)
+         player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
+         player.physicsBody?.isDynamic = true
+         
+         player.physicsBody?.categoryBitMask = playerCategory
+         player.physicsBody?.contactTestBitMask = torpilleCategory
+         player.physicsBody?.collisionBitMask = 0
+         self.addChild(player)
+         
+         HealthBarPlayer = SKSpriteNode(color:SKColor .green, size: CGSize(width: lifePlayer, height: 30))
+         HealthBarPlayer.position = CGPoint(x: self.frame.width / -4.2, y: self.frame.height / -2.5)
+         HealthBarPlayer.zPosition = 1
+         self.addChild(HealthBarPlayer)
     }
     
     func addAlien(){
@@ -134,7 +155,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             alien = SKSpriteNode(imageNamed: "falcon")
         }
         
-        alien.size = CGSize(width: alien.size.width/3, height: alien.size.width/3)
+        alien.size = CGSize(width: alien.size.width/10, height: alien.size.width/10)
        
         alien.name = "alien"
         alien.position = CGPoint(x: 0, y: 500)
@@ -145,6 +166,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody?.contactTestBitMask = torpilleCategory
         alien.physicsBody?.collisionBitMask = 0
         self.addChild(alien)
+        
+        let moveLeft = SKAction.move(to: CGPoint(x: -300, y:  500), duration: 5)
+        let moveRight = SKAction.move(to: CGPoint(x: 300, y:  500), duration: 5)
+
+        alien?.run(SKAction.repeatForever(SKAction.sequence([moveLeft, moveRight])))
         
         HealthBarEnemy = SKSpriteNode(color:SKColor .green, size: CGSize(width: lifeAlien, height: 30))
         HealthBarEnemy.position = CGPoint(x: self.frame.width / 4.2, y: self.frame.height/2.5)
@@ -158,12 +184,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         fireTorpille()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    
+   
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self)
+            player.position.x = location.x
+            //alien.position.x = location.x
+            print("loc: \(location.x)")
+            print("player: \(player.isFocused)")
+        }
+    }
+    
     func fireTorpille(){
-        //self.run(SKAction.playSoundFileNamed("XWing_fire.mp3", waitForCompletion: false))
+        self.run(SKAction.playSoundFileNamed("XWing_fire.mp3", waitForCompletion: false))
         
         torpilleNode = SKSpriteNode(imageNamed: "laser")
         torpilleNode.size = CGSize(width: torpilleNode.size.width/6, height: torpilleNode.size.width/6)
-        torpilleNode.position = CGPoint(x: 0, y: player.position.y + ((player.size.height) / 2) + 30)
+        torpilleNode.position = CGPoint(x: player.position.x, y: player.position.y + ((player.size.height) / 2) + 30)
         
         torpilleNode.physicsBody = SKPhysicsBody(rectangleOf: torpilleNode!.size)
         torpilleNode.physicsBody?.isDynamic = true
@@ -177,7 +218,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let animationDuration:TimeInterval = 1
 
         var actionArray = [SKAction]( )
-        actionArray.append(SKAction.move(to: CGPoint(x: player.position.x, y: self.frame.size.height + 10), duration: animationDuration))
+        actionArray.append(SKAction.move(to: CGPoint(x: player.position.x, y: 500), duration: animationDuration))
         actionArray.append(SKAction.removeFromParent())
         torpilleNode?.run(SKAction.sequence(actionArray))
         
@@ -206,15 +247,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
    
     func tropilleDidColide(torpille:SKSpriteNode,alien:SKSpriteNode){
-//        let explosion = SKEmitterNode(fileNamed: "Explosion")
-//        explosion!.position = alien.position
-//        self.addChild(explosion!)
+        let explosion = SKEmitterNode(fileNamed: "Explosion")
+        explosion!.position = alien.position
+        self.addChild(explosion!)
         
-//        self.run(SKAction.playSoundFileNamed("explosion.mp3", waitForCompletion: false))
+        self.run(SKAction.playSoundFileNamed("explosion.mp3", waitForCompletion: false))
         
         torpille.removeFromParent()
         self.run(SKAction.wait(forDuration: 2)) {
-//            explosion?.removeFromParent()
+            explosion?.removeFromParent()
         }
         var percentBar = 0
         if(alien.name == "player"){
@@ -262,7 +303,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    var lastUpdateTime:TimeInterval = 0
+    var dt: TimeInterval = 0
+    let alienMovePointsPerSec: CGFloat =  100
+    var velocity = CGPoint.zero
+    let direction: Bool = true
+    
+    func moveAlien(sprite: SKSpriteNode, velocity: CGPoint){
+        let amountToMove = CGPoint(x: velocity.x * CGFloat(dt), y: velocity.y * CGFloat(dt))
+        sprite.position = CGPoint(x: sprite.position.x + amountToMove.x, y: sprite.position.y + amountToMove.y)
+    }
+    
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        if lastUpdateTime > 0 {
+            dt = currentTime - lastUpdateTime
+        }else {
+            dt = 0
+        }
+        lastUpdateTime = currentTime
+        
+//         moveAlien(sprite: alien, velocity: CGPoint(x: alienMovePointsPerSec, y: 0))
+//        if (alien.position.x < 310 && alien.position.x > 300 ){
+//            moveAlien(sprite: alien, velocity: CGPoint(x: -alienMovePointsPerSec, y: 0))
+//
+//        }else if(alien.position.x > -310 && alien.position.x < -300 ) {
+//            moveAlien(sprite: alien, velocity: CGPoint(x: alienMovePointsPerSec, y: 0))
+//        }
+        
+        print(alien.position.x)
+        
+        
     }
 }
