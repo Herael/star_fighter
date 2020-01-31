@@ -23,6 +23,8 @@
 		59EFC3B623C21DD8001D37F4 /* SpaceshipMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */; };
 		59EFC3B923C21E0D001D37F4 /* Spaceship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3B823C21E0D001D37F4 /* Spaceship.swift */; };
 		59EFC3BB23C21E1C001D37F4 /* SpaceshipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */; };
+		966ED7A623E4D8F800BBDDDE /* Algo2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966ED7A523E4D8F800BBDDDE /* Algo2020.swift */; };
+		966ED7B023E4D9DB00BBDDDE /* StarFighterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966ED7AF23E4D9DB00BBDDDE /* StarFighterTests.swift */; };
 		CEEDE3E323C251260005E7C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3E123C251260005E7C7 /* HomeViewController.swift */; };
 		CEEDE3E423C251260005E7C7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3E223C251260005E7C7 /* HomeViewController.xib */; };
 		CEEDE3EC23C252E70005E7C7 /* StarshipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EA23C252E70005E7C7 /* StarshipTableViewController.swift */; };
@@ -33,6 +35,16 @@
 		CEEDE3F523C25A880005E7C7 /* StarshipDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3F323C25A880005E7C7 /* StarshipDetailViewController.xib */; };
 		FF343944EECEA31DFEF0AE54 /* Pods_StarFighter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128386F583CC21BD28FD36A8 /* Pods_StarFighter.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		966ED7B223E4D9DB00BBDDDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59B5AF1323C0CD19006A849B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59B5AF1A23C0CD19006A849B;
+			remoteInfo = StarFighter;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		128386F583CC21BD28FD36A8 /* Pods_StarFighter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarFighter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +67,10 @@
 		59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipMockService.swift; sourceTree = "<group>"; };
 		59EFC3B823C21E0D001D37F4 /* Spaceship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spaceship.swift; sourceTree = "<group>"; };
 		59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipService.swift; sourceTree = "<group>"; };
+		966ED7A523E4D8F800BBDDDE /* Algo2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algo2020.swift; sourceTree = "<group>"; };
+		966ED7AD23E4D9DB00BBDDDE /* StarFighterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarFighterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		966ED7AF23E4D9DB00BBDDDE /* StarFighterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarFighterTests.swift; sourceTree = "<group>"; };
+		966ED7B123E4D9DB00BBDDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEDE3E123C251260005E7C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEEDE3E223C251260005E7C7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CEEDE3EA23C252E70005E7C7 /* StarshipTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipTableViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +91,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		966ED7AA23E4D9DB00BBDDDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				59B5AF1D23C0CD19006A849B /* StarFighter */,
+				966ED7AE23E4D9DB00BBDDDE /* StarFighterTests */,
 				59B5AF1C23C0CD19006A849B /* Products */,
 				84122C12BBF7C49AC2A8C32C /* Pods */,
 				CC5C7747CC768C99530FBA2E /* Frameworks */,
@@ -92,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				59B5AF1B23C0CD19006A849B /* StarFighter.app */,
+				966ED7AD23E4D9DB00BBDDDE /* StarFighterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +141,7 @@
 				59B5AF2B23C0CD1B006A849B /* Assets.xcassets */,
 				59B5AF2D23C0CD1B006A849B /* LaunchScreen.storyboard */,
 				59B5AF3023C0CD1B006A849B /* Info.plist */,
+				966ED7A523E4D8F800BBDDDE /* Algo2020.swift */,
 			);
 			path = StarFighter;
 			sourceTree = "<group>";
@@ -162,6 +188,15 @@
 				31BCCD50C22399CBE065AC96 /* Pods-StarFighter.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		966ED7AE23E4D9DB00BBDDDE /* StarFighterTests */ = {
+			isa = PBXGroup;
+			children = (
+				966ED7AF23E4D9DB00BBDDDE /* StarFighterTests.swift */,
+				966ED7B123E4D9DB00BBDDDE /* Info.plist */,
+			);
+			path = StarFighterTests;
 			sourceTree = "<group>";
 		};
 		CC5C7747CC768C99530FBA2E /* Frameworks */ = {
@@ -239,18 +274,40 @@
 			productReference = 59B5AF1B23C0CD19006A849B /* StarFighter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		966ED7AC23E4D9DB00BBDDDE /* StarFighterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 966ED7B423E4D9DB00BBDDDE /* Build configuration list for PBXNativeTarget "StarFighterTests" */;
+			buildPhases = (
+				966ED7A923E4D9DB00BBDDDE /* Sources */,
+				966ED7AA23E4D9DB00BBDDDE /* Frameworks */,
+				966ED7AB23E4D9DB00BBDDDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				966ED7B323E4D9DB00BBDDDE /* PBXTargetDependency */,
+			);
+			name = StarFighterTests;
+			productName = StarFighterTests;
+			productReference = 966ED7AD23E4D9DB00BBDDDE /* StarFighterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		59B5AF1323C0CD19006A849B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1120;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = StarFighter;
 				TargetAttributes = {
 					59B5AF1A23C0CD19006A849B = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					966ED7AC23E4D9DB00BBDDDE = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 59B5AF1A23C0CD19006A849B;
 					};
 				};
 			};
@@ -268,6 +325,7 @@
 			projectRoot = "";
 			targets = (
 				59B5AF1A23C0CD19006A849B /* StarFighter */,
+				966ED7AC23E4D9DB00BBDDDE /* StarFighterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -291,6 +349,13 @@
 				CEEDE3E423C251260005E7C7 /* HomeViewController.xib in Resources */,
 				59B5AF2323C0CD19006A849B /* Actions.sks in Resources */,
 				CEEDE3ED23C252E70005E7C7 /* StarshipTableViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		966ED7AB23E4D9DB00BBDDDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,11 +417,28 @@
 				59B5AF1F23C0CD19006A849B /* AppDelegate.swift in Sources */,
 				59EFC3BB23C21E1C001D37F4 /* SpaceshipService.swift in Sources */,
 				59EFC3B923C21E0D001D37F4 /* Spaceship.swift in Sources */,
+				966ED7A623E4D8F800BBDDDE /* Algo2020.swift in Sources */,
 				CEEDE3F023C254930005E7C7 /* StarshipTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		966ED7A923E4D9DB00BBDDDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				966ED7B023E4D9DB00BBDDDE /* StarFighterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		966ED7B323E4D9DB00BBDDDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59B5AF1A23C0CD19006A849B /* StarFighter */;
+			targetProxy = 966ED7B223E4D9DB00BBDDDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		59B5AF2823C0CD19006A849B /* Main.storyboard */ = {
@@ -532,6 +614,44 @@
 			};
 			name = Release;
 		};
+		966ED7B523E4D9DB00BBDDDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StarFighterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = arthur.StarFighterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarFighter.app/StarFighter";
+			};
+			name = Debug;
+		};
+		966ED7B623E4D9DB00BBDDDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = StarFighterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = arthur.StarFighterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StarFighter.app/StarFighter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -549,6 +669,15 @@
 			buildConfigurations = (
 				59B5AF3423C0CD1B006A849B /* Debug */,
 				59B5AF3523C0CD1B006A849B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		966ED7B423E4D9DB00BBDDDE /* Build configuration list for PBXNativeTarget "StarFighterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				966ED7B523E4D9DB00BBDDDE /* Debug */,
+				966ED7B623E4D9DB00BBDDDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
