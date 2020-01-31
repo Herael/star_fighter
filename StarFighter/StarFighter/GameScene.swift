@@ -34,7 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var torpilleNode: SKSpriteNode!
     
-    var gameTimer: Timer!
+    var gameTimer: Timer?
     let alienCategory:UInt32 = 0x1 << 1
     let torpilleCategory:UInt32 = 0x1 << 0
     let playerCategory:UInt32 = 0x1 << 2
@@ -55,30 +55,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     addPlayer()
     addAlien()
-    gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
         
-
-        // deplacement tilt du telephone
-//        motionManager.accelerometerUpdateInterval = 0.2
-//        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data:CMAccelerometerData?, error:Error?) in
-//            if let accelerometerData = data {
-//                let acceleration = accelerometerData.acceleration
-//                self.xAcceleration = CGFloat(acceleration.x) * 0.75 + self.xAcceleration * 0.25
-//            }
-//        }
+    // deplacement tilt du telephone
+    motionManager.accelerometerUpdateInterval = 0.1
+    motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data:CMAccelerometerData?, error:Error?) in
+        if let accelerometerData = data {
+            let acceleration = accelerometerData.acceleration
+            self.xAcceleration = CGFloat(acceleration.x) * 0.75 + self.xAcceleration * 0.25
+        }
+    }
 }
     
     
   // deplacement tilt du telephone
-//    override func didSimulatePhysics() {
-//        player.position.x += xAcceleration * 50
-//        if player.position.x < -20 {
-//            player.position = CGPoint(x: self.size.width + 20, y: player.position.y)
-//        }else if player.position.x > self.size.width + 20 {
-//            player.position = CGPoint(x: -20, y: player.position.y)
-//        }
-//    }
-                
+    override func didSimulatePhysics() {
+        player.position.x += xAcceleration * 80
+        if player.position.x < -350 {
+            player.position = CGPoint(x: self.size.width/2, y: player.position.y)
+        }else if player.position.x > self.size.width/2 {
+            player.position = CGPoint(x: -350, y: player.position.y)
+        }
+    }
+
     @objc func enemyFire(){
         self.run(SKAction.playSoundFileNamed("TIE_fire.mp3", waitForCompletion: false))
         
@@ -167,6 +165,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody?.collisionBitMask = 0
         self.addChild(alien)
         
+        self.gameTimer?.invalidate()
+        self.gameTimer = Timer.scheduledTimer(timeInterval: (TimeInterval(100/enemy.speed)), target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
+        
+        
+        
         let moveLeft = SKAction.move(to: CGPoint(x: -300, y:  500), duration: 5)
         let moveRight = SKAction.move(to: CGPoint(x: 300, y:  500), duration: 5)
 
@@ -188,7 +191,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-   
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
@@ -264,7 +266,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             HealthBarPlayer.size = CGSize(width: lifePlayer, height: 30)
             switch lifePlayer {
             case ...0:
-                win = SKLabelNode(text: "LOOSER")
+                win = SKLabelNode(text: "LOSER")
                 win.position = CGPoint(x: 0, y: 0)
                 win.fontName = "Zapfino"
                 win.fontSize = 50
@@ -283,6 +285,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }else{
             percentBar = (playerSpaceship.damage*100) / enemy.hp
+            
             lifeAlien -= percentBar
             HealthBarEnemy.size = CGSize(width: lifeAlien, height: 30)
             switch lifeAlien {

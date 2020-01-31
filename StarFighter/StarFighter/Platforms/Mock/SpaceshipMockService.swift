@@ -35,6 +35,6 @@ class SpaceshipMockService: SpaceshipService {
     }
     
     func getXWing(completion: @escaping (Spaceship?) -> Void) {
-        return completion(Spaceship(id: "3", name: "X-wing", model: "T-65 X-wing", manufacturer: "Incom Corporation", speed: 100, hp: 1000000, damage: 24000, spaceshipClass: "Starfighter", img: URL(string: "https://vignette.wikia.nocookie.net/fr.starwars/images/e/eb/X-Wing_T-65.png/revision/latest?cb=20161005121139")))
+        return completion(Spaceship(id: "3", name: "X-wing", model: "T-65 X-wing", manufacturer: "Incom Corporation", speed: 100, hp: 94000, damage: 24000, spaceshipClass: "Starfighter", img: URL(string: "https://vignette.wikia.nocookie.net/fr.starwars/images/e/eb/X-Wing_T-65.png/revision/latest?cb=20161005121139")))
     }
 }
