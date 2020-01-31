@@ -1,0 +1,23 @@
+osx_image: xcode11.3
+language: objective-c
+before_install:
+  - chmod +x curlDiscord.sh
+branches:
+  only:
+    - master
+    - gh-pages
+notifications:
+  email: false
+install:
+  - gem install bundler
+  - bundle install
+script:
+  - if [ "$TRAVIS_BRANCH" = "gh-pages" ]; then ./curlDiscord.sh; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then bundle exec fastlane ios unitTest; fi
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
