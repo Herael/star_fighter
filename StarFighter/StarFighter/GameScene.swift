@@ -34,6 +34,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var torpilleNode: SKSpriteNode!
     
+    var scoreLabel: SKLabelNode!
+    var score:Int = 0
+    
     var gameTimer: Timer?
     let alienCategory:UInt32 = 0x1 << 1
     let torpilleCategory:UInt32 = 0x1 << 0
@@ -55,6 +58,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     addPlayer()
     addAlien()
+    setScore(score)
         
     // deplacement tilt du telephone
     motionManager.accelerometerUpdateInterval = 0.1
@@ -284,6 +288,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 HealthBarPlayer.color = SKColor .green
             }
         }else{
+            //bypass the limit of int (Remember call of duty black ops...)
+            guard let scoreValue = UInt64(scoreLabel.text!) else {return}
+            scoreLabel.text = String(scoreValue + UInt64(playerSpaceship.damage / 100))
             percentBar = (playerSpaceship.damage*100) / enemy.hp
             
             lifeAlien -= percentBar
@@ -304,6 +311,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 HealthBarEnemy.color = SKColor .green
             }
         }
+    }
+  
+    func setScore(_: Int){
+        scoreLabel = SKLabelNode(text: String(score))
+        scoreLabel.position = CGPoint(x: 200, y: 0)
+        scoreLabel.fontName = "Zapfino"
+        scoreLabel.fontSize = 24
+        scoreLabel.color = UIColor.white
+        addChild(scoreLabel)
     }
     
     var lastUpdateTime:TimeInterval = 0
