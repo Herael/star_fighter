@@ -10,21 +10,41 @@ import UIKit
 
 class StarshipDetailViewController: UIViewController {
 
+    
+    let preferences = UserDefaults.standard
+    var spaceshipSelected:Spaceship?
+    
+    @IBOutlet weak var spaceshipImageViewController: UIImageView!
+    
+    @IBOutlet weak var spaceshipName: UILabel!
+    @IBOutlet weak var spaceshipHp: UILabel!
+    @IBOutlet weak var spaceshipDamage: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        guard let spaceship = spaceshipSelected else {return}
+        
+        spaceshipName.text = spaceship.name
+        spaceshipHp.text = String(spaceship.hp)
+        spaceshipDamage.text = String(spaceship.damage)
+        if let pictureURL = spaceship.img {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: pictureURL) {
+                    DispatchQueue.main.sync {
+                        self.spaceshipImageViewController.image = UIImage(data: data)
+                    }
+                }
+            }
+        }
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func validButtonAction(_ sender: Any) {
+        let game = GameViewController()
+        self.navigationController?.pushViewController(game, animated: true)
     }
-    */
+    
 
 }

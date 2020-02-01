@@ -25,5 +25,9 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func touchButton(_ sender: Any) {
+        let spaceshipList = StarshipTableViewController()
+        self.navigationController?.pushViewController(spaceshipList, animated: true)
+    }
+    
 }

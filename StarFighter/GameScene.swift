@@ -14,6 +14,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var spaceshipService: SpaceshipService {
         return SpaceshipMockService()
+//        return SpaceshipAPIService()
     }
     
     var playerSpaceship:Spaceship!
@@ -27,14 +28,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lifePlayer:Int = 100
     
     var alien: SKSpriteNode!
-    var possibleAliens = ["tie","falcon","starDestroyer"]
     var HealthBarEnemy: SKSpriteNode!
     var lifeAlienLabel:SKLabelNode!
     var lifeAlien:Int = 100
     
     var torpilleNode: SKSpriteNode!
     
-    var gameTimer: Timer!
+    var gameTimer: Timer?
     let alienCategory:UInt32 = 0x1 << 1
     let torpilleCategory:UInt32 = 0x1 << 0
     let playerCategory:UInt32 = 0x1 << 2
@@ -42,6 +42,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let motionManager = CMMotionManager()
     var xAcceleration:CGFloat = 0
     var win: SKLabelNode!
+    
+    var scoreLabel: SKLabelNode!
+    var score:Int = 0
 
     override func didMove(to view: SKView) {
     starfield = SKEmitterNode(fileNamed: "Starfield")
@@ -55,11 +58,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     addPlayer()
     addAlien()
-    gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
+    setScore(score)
         
 
         // deplacement tilt du telephone
-//        motionManager.accelerometerUpdateInterval = 0.2
+//        motionManager.accelerometerUpdateInterval = 0.1
 //        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data:CMAccelerometerData?, error:Error?) in
 //            if let accelerometerData = data {
 //                let acceleration = accelerometerData.acceleration
@@ -71,11 +74,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
   // deplacement tilt du telephone
 //    override func didSimulatePhysics() {
-//        player.position.x += xAcceleration * 50
-//        if player.position.x < -20 {
-//            player.position = CGPoint(x: self.size.width + 20, y: player.position.y)
-//        }else if player.position.x > self.size.width + 20 {
-//            player.position = CGPoint(x: -20, y: player.position.y)
+//        player.position.x += xAcceleration * 80
+//        if player.position.x < -350 {
+//            player.position = CGPoint(x: self.size.width/2, y: player.position.y)
+//        }else if player.position.x > self.size.width/2 {
+//            player.position = CGPoint(x: -350, y: player.position.y)
 //        }
 //    }
                 
@@ -110,19 +113,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.spaceshipService.getXWing { (Spaceship) in
              guard let spaceship = Spaceship else {return}
              self.playerSpaceship = spaceship
+            if(self.playerSpaceship.img != nil) {
+                let data = try! Data(contentsOf: self.playerSpaceship.img!)
+                let image = UIImage(data: data)
+                let Texture = SKTexture(image: image!)
+                self.player = SKSpriteNode(texture: Texture)
+            } else {
+                self.player = SKSpriteNode(imageNamed: "falcon")
+            }
          }
-         
-         if(self.playerSpaceship.img != nil) {
-             let data = try! Data(contentsOf: self.playerSpaceship.img!)
-             let image = UIImage(data: data)
-             let Texture = SKTexture(image: image!)
-             player = SKSpriteNode(texture: Texture)
-         } else {
-             player = SKSpriteNode(imageNamed: "falcon")
-         }
-         
-         player.size = CGSize(width: player.size.width/10, height: player.size.width/10)
         
+         player.size = CGSize(width: player.size.width/10, height: player.size.width/10)
          player.name = "player"
          player.position = CGPoint(x: 0, y: -450)
          player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
@@ -170,6 +171,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let moveLeft = SKAction.move(to: CGPoint(x: -300, y:  500), duration: 5)
         let moveRight = SKAction.move(to: CGPoint(x: 300, y:  500), duration: 5)
 
+        self.gameTimer?.invalidate()
+//        let atkSpeed:Double = Double(1/Double(alien.speed)/10)
+        let atkSpeed:Double = Double(10.00 / Float(enemy.speed))
+        self.gameTimer = Timer.scheduledTimer(timeInterval: atkSpeed, target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
+        
         alien?.run(SKAction.repeatForever(SKAction.sequence([moveLeft, moveRight])))
         
         HealthBarEnemy = SKSpriteNode(color:SKColor .green, size: CGSize(width: lifeAlien, height: 30))
@@ -194,8 +200,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let location = touch.location(in: self)
             player.position.x = location.x
             //alien.position.x = location.x
-            print("loc: \(location.x)")
-            print("player: \(player.isFocused)")
+//            print("loc: \(location.x)")
+//            print("player: \(player.isFocused)")
         }
     }
     
@@ -264,7 +270,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             HealthBarPlayer.size = CGSize(width: lifePlayer, height: 30)
             switch lifePlayer {
             case ...0:
-                win = SKLabelNode(text: "LOOSER")
+                win = SKLabelNode(text: "LOSER")
                 win.position = CGPoint(x: 0, y: 0)
                 win.fontName = "Zapfino"
                 win.fontSize = 50
@@ -282,6 +288,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 HealthBarPlayer.color = SKColor .green
             }
         }else{
+            //bypass the limit of int (Remember call of duty black ops...)
+            guard let scoreValue = UInt64(scoreLabel.text!) else {return}
+            scoreLabel.text = String(scoreValue + UInt64(playerSpaceship.damage / 100))
             percentBar = (playerSpaceship.damage*100) / enemy.hp
             lifeAlien -= percentBar
             HealthBarEnemy.size = CGSize(width: lifeAlien, height: 30)
@@ -301,6 +310,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 HealthBarEnemy.color = SKColor .green
             }
         }
+    }
+    
+    func setScore(_: Int){
+        scoreLabel = SKLabelNode(text: String(score))
+        scoreLabel.position = CGPoint(x: 200, y: 0)
+        scoreLabel.fontName = "Zapfino"
+        scoreLabel.fontSize = 24
+        scoreLabel.color = UIColor.white
+        addChild(scoreLabel)
     }
     
     var lastUpdateTime:TimeInterval = 0
@@ -330,7 +348,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //            moveAlien(sprite: alien, velocity: CGPoint(x: alienMovePointsPerSec, y: 0))
 //        }
         
-        print(alien.position.x)
+//        print(alien.position.x)
         
         
     }

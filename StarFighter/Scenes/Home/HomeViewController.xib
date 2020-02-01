@@ -63,6 +63,9 @@
                     <state key="normal" title="SIGN IN">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="touchButton:" destination="-1" eventType="touchUpInside" id="VK4-f4-qFH"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Var-h1-OiE">
                     <rect key="frame" x="87" y="741" width="240" height="32"/>
