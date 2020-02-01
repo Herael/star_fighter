@@ -23,12 +23,13 @@
 		59EFC3B623C21DD8001D37F4 /* SpaceshipMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */; };
 		59EFC3B923C21E0D001D37F4 /* Spaceship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3B823C21E0D001D37F4 /* Spaceship.swift */; };
 		59EFC3BB23C21E1C001D37F4 /* SpaceshipService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */; };
+		59F11DBC23E5B88D0055F604 /* StarshipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F11DBA23E5B88D0055F604 /* StarshipTableViewController.swift */; };
+		59F11DBD23E5B88D0055F604 /* StarshipTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59F11DBB23E5B88D0055F604 /* StarshipTableViewController.xib */; };
+		59F11DC023E5BB8A0055F604 /* SpaceshipAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F11DBF23E5BB8A0055F604 /* SpaceshipAPIService.swift */; };
 		966ED7A623E4D8F800BBDDDE /* Algo2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966ED7A523E4D8F800BBDDDE /* Algo2020.swift */; };
 		966ED7B023E4D9DB00BBDDDE /* StarFighterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966ED7AF23E4D9DB00BBDDDE /* StarFighterTests.swift */; };
 		CEEDE3E323C251260005E7C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3E123C251260005E7C7 /* HomeViewController.swift */; };
 		CEEDE3E423C251260005E7C7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3E223C251260005E7C7 /* HomeViewController.xib */; };
-		CEEDE3EC23C252E70005E7C7 /* StarshipTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EA23C252E70005E7C7 /* StarshipTableViewController.swift */; };
-		CEEDE3ED23C252E70005E7C7 /* StarshipTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3EB23C252E70005E7C7 /* StarshipTableViewController.xib */; };
 		CEEDE3F023C254930005E7C7 /* StarshipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EE23C254920005E7C7 /* StarshipTableViewCell.swift */; };
 		CEEDE3F123C254930005E7C7 /* StarshipTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3EF23C254930005E7C7 /* StarshipTableViewCell.xib */; };
 		CEEDE3F423C25A880005E7C7 /* StarshipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3F223C25A880005E7C7 /* StarshipDetailViewController.swift */; };
@@ -67,14 +68,15 @@
 		59EFC3B523C21DD8001D37F4 /* SpaceshipMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipMockService.swift; sourceTree = "<group>"; };
 		59EFC3B823C21E0D001D37F4 /* Spaceship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spaceship.swift; sourceTree = "<group>"; };
 		59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipService.swift; sourceTree = "<group>"; };
+		59F11DBA23E5B88D0055F604 /* StarshipTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipTableViewController.swift; sourceTree = "<group>"; };
+		59F11DBB23E5B88D0055F604 /* StarshipTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipTableViewController.xib; sourceTree = "<group>"; };
+		59F11DBF23E5BB8A0055F604 /* SpaceshipAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceshipAPIService.swift; sourceTree = "<group>"; };
 		966ED7A523E4D8F800BBDDDE /* Algo2020.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algo2020.swift; sourceTree = "<group>"; };
 		966ED7AD23E4D9DB00BBDDDE /* StarFighterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarFighterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		966ED7AF23E4D9DB00BBDDDE /* StarFighterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarFighterTests.swift; sourceTree = "<group>"; };
 		966ED7B123E4D9DB00BBDDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEEDE3E123C251260005E7C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEEDE3E223C251260005E7C7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		CEEDE3EA23C252E70005E7C7 /* StarshipTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipTableViewController.swift; sourceTree = "<group>"; };
-		CEEDE3EB23C252E70005E7C7 /* StarshipTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipTableViewController.xib; sourceTree = "<group>"; };
 		CEEDE3EE23C254920005E7C7 /* StarshipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipTableViewCell.swift; sourceTree = "<group>"; };
 		CEEDE3EF23C254930005E7C7 /* StarshipTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarshipTableViewCell.xib; sourceTree = "<group>"; };
 		CEEDE3F223C25A880005E7C7 /* StarshipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipDetailViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		59EFC3B123C21D9E001D37F4 /* Platforms */ = {
 			isa = PBXGroup;
 			children = (
+				59F11DBE23E5BB710055F604 /* API */,
 				59EFC3B223C21DB4001D37F4 /* Mock */,
 			);
 			path = Platforms;
@@ -179,6 +182,14 @@
 				59EFC3BA23C21E1C001D37F4 /* SpaceshipService.swift */,
 			);
 			path = Domains;
+			sourceTree = "<group>";
+		};
+		59F11DBE23E5BB710055F604 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				59F11DBF23E5BB8A0055F604 /* SpaceshipAPIService.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		84122C12BBF7C49AC2A8C32C /* Pods */ = {
@@ -242,12 +253,12 @@
 		CEEDE3E523C251AB0005E7C7 /* Starships */ = {
 			isa = PBXGroup;
 			children = (
-				CEEDE3EA23C252E70005E7C7 /* StarshipTableViewController.swift */,
-				CEEDE3EB23C252E70005E7C7 /* StarshipTableViewController.xib */,
 				CEEDE3EE23C254920005E7C7 /* StarshipTableViewCell.swift */,
 				CEEDE3EF23C254930005E7C7 /* StarshipTableViewCell.xib */,
 				CEEDE3F223C25A880005E7C7 /* StarshipDetailViewController.swift */,
 				CEEDE3F323C25A880005E7C7 /* StarshipDetailViewController.xib */,
+				59F11DBA23E5B88D0055F604 /* StarshipTableViewController.swift */,
+				59F11DBB23E5B88D0055F604 /* StarshipTableViewController.xib */,
 			);
 			path = Starships;
 			sourceTree = "<group>";
@@ -348,7 +359,7 @@
 				59EFC3A123C20132001D37F4 /* XWing_fire.mp3 in Resources */,
 				CEEDE3E423C251260005E7C7 /* HomeViewController.xib in Resources */,
 				59B5AF2323C0CD19006A849B /* Actions.sks in Resources */,
-				CEEDE3ED23C252E70005E7C7 /* StarshipTableViewController.xib in Resources */,
+				59F11DBD23E5B88D0055F604 /* StarshipTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,9 +420,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				59EFC3B623C21DD8001D37F4 /* SpaceshipMockService.swift in Sources */,
-				CEEDE3EC23C252E70005E7C7 /* StarshipTableViewController.swift in Sources */,
 				CEEDE3F423C25A880005E7C7 /* StarshipDetailViewController.swift in Sources */,
 				CEEDE3E323C251260005E7C7 /* HomeViewController.swift in Sources */,
+				59F11DBC23E5B88D0055F604 /* StarshipTableViewController.swift in Sources */,
 				59B5AF2523C0CD19006A849B /* GameScene.swift in Sources */,
 				59B5AF2723C0CD19006A849B /* GameViewController.swift in Sources */,
 				59B5AF1F23C0CD19006A849B /* AppDelegate.swift in Sources */,
@@ -419,6 +430,7 @@
 				59EFC3B923C21E0D001D37F4 /* Spaceship.swift in Sources */,
 				966ED7A623E4D8F800BBDDDE /* Algo2020.swift in Sources */,
 				CEEDE3F023C254930005E7C7 /* StarshipTableViewCell.swift in Sources */,
+				59F11DC023E5BB8A0055F604 /* SpaceshipAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
