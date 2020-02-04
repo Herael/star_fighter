@@ -81,25 +81,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(worldNode)
 
         // deplacement tilt du telephone
-//        motionManager.accelerometerUpdateInterval = 0.1
-//        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data:CMAccelerometerData?, error:Error?) in
-//            if let accelerometerData = data {
-//                let acceleration = accelerometerData.acceleration
-//                self.xAcceleration = CGFloat(acceleration.x) * 0.75 + self.xAcceleration * 0.25
-//            }
-//        }
+        motionManager.accelerometerUpdateInterval = 0.1
+        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data:CMAccelerometerData?, error:Error?) in
+            if let accelerometerData = data {
+                let acceleration = accelerometerData.acceleration
+                self.xAcceleration = CGFloat(acceleration.x) * 0.75 + self.xAcceleration * 0.25
+            }
+        }
 }
     
     
   // deplacement tilt du telephone
-//    override func didSimulatePhysics() {
-//        player.position.x += xAcceleration * 80
-//        if player.position.x < -350 {
-//            player.position = CGPoint(x: self.size.width/2, y: player.position.y)
-//        }else if player.position.x > self.size.width/2 {
-//            player.position = CGPoint(x: -350, y: player.position.y)
-//        }
-//    }
+    override func didSimulatePhysics() {
+        player.position.x += xAcceleration * 80
+        if player.position.x < -350 {
+            player.position = CGPoint(x: self.size.width/2, y: player.position.y)
+        }else if player.position.x > self.size.width/2 {
+            player.position = CGPoint(x: -350, y: player.position.y)
+        }
+    }
                 
     @objc func enemyFire(){
         if !worldNode.isPaused {
@@ -206,12 +206,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.gameTimer?.invalidate()
 //        let atkSpeed:Double = Double(1/Double(alien.speed)/10)
          let atkSpeed:Double
-        if !worldNode.isPaused {
+        if worldNode.isPaused {
            atkSpeed = 0
+            print("ENEMY.SPEED \(enemy.speed)")
         }else{
         atkSpeed = Double(10.00 / Float(enemy.speed))
         }
-        print(atkSpeed)
+//        print(atkSpeed)
         self.gameTimer = Timer.scheduledTimer(timeInterval: atkSpeed, target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
         
         
