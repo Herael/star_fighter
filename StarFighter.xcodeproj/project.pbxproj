@@ -28,6 +28,7 @@
 		59F11DC023E5BB8A0055F604 /* SpaceshipAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F11DBF23E5BB8A0055F604 /* SpaceshipAPIService.swift */; };
 		966ED7A623E4D8F800BBDDDE /* Algo2020.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966ED7A523E4D8F800BBDDDE /* Algo2020.swift */; };
 		966ED7B023E4D9DB00BBDDDE /* StarFighterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966ED7AF23E4D9DB00BBDDDE /* StarFighterTests.swift */; };
+		CE15435323E9F4690061DE02 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE15435223E9F4690061DE02 /* GameKit.framework */; };
 		CEEDE3E323C251260005E7C7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3E123C251260005E7C7 /* HomeViewController.swift */; };
 		CEEDE3E423C251260005E7C7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEDE3E223C251260005E7C7 /* HomeViewController.xib */; };
 		CEEDE3F023C254930005E7C7 /* StarshipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEDE3EE23C254920005E7C7 /* StarshipTableViewCell.swift */; };
@@ -75,6 +76,7 @@
 		966ED7AD23E4D9DB00BBDDDE /* StarFighterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarFighterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		966ED7AF23E4D9DB00BBDDDE /* StarFighterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarFighterTests.swift; sourceTree = "<group>"; };
 		966ED7B123E4D9DB00BBDDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE15435223E9F4690061DE02 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		CEEDE3E123C251260005E7C7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEEDE3E223C251260005E7C7 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CEEDE3EE23C254920005E7C7 /* StarshipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipTableViewCell.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF343944EECEA31DFEF0AE54 /* Pods_StarFighter.framework in Frameworks */,
+				CE15435323E9F4690061DE02 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +216,7 @@
 		CC5C7747CC768C99530FBA2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE15435223E9F4690061DE02 /* GameKit.framework */,
 				128386F583CC21BD28FD36A8 /* Pods_StarFighter.framework */,
 			);
 			name = Frameworks;
@@ -593,7 +597,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = 38692H88Z7;
+				DEVELOPMENT_TEAM = W69PPH7MV9;
 				INFOPLIST_FILE = StarFighter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -613,7 +617,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = 38692H88Z7;
+				DEVELOPMENT_TEAM = W69PPH7MV9;
 				INFOPLIST_FILE = StarFighter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
