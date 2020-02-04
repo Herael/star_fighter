@@ -8,6 +8,9 @@
 
 import UIKit
 
+var allShips:[Spaceship] = [ ]
+var playerShip:Spaceship? = nil
+
 class StarshipTableViewController: UITableViewController {
         
     @IBOutlet var starshipTableView: UITableView!
@@ -17,10 +20,15 @@ class StarshipTableViewController: UITableViewController {
             self.starshipTableView.reloadData()
         }
     }
+
+    
+    
     var spaceshipService: SpaceshipService {
 //        return SpaceshipMockService()
         return SpaceshipAPIService()
     }
+    
+   
     
     
     override func viewDidLoad() {
@@ -29,13 +37,20 @@ class StarshipTableViewController: UITableViewController {
         self.starshipTableView.delegate = self
         self.starshipTableView.rowHeight = 120
         self.starshipTableView.register(UINib(nibName: "StarshipTableViewCell", bundle: nil), forCellReuseIdentifier:StarshipTableViewController.spaceshipCellId)
+     
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.spaceshipService.getAll { (spaceships) in
             self.spaceships = spaceships
+            allShips = spaceships
+            
         }
     }
+   
+          
     
     
     // MARK: - Table view data source

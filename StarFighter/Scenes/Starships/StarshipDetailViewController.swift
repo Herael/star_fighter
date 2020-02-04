@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class StarshipDetailViewController: UIViewController {
 
     
@@ -42,6 +43,7 @@ class StarshipDetailViewController: UIViewController {
     
     
     @IBAction func validButtonAction(_ sender: Any) {
+        playerShip = spaceshipSelected
         let game = GameViewController()
         self.navigationController?.pushViewController(game, animated: true)
     }
