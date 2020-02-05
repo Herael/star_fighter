@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		128386F583CC21BD28FD36A8 /* Pods_StarFighter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarFighter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BCCD50C22399CBE065AC96 /* Pods-StarFighter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarFighter.release.xcconfig"; path = "Target Support Files/Pods-StarFighter/Pods-StarFighter.release.xcconfig"; sourceTree = "<group>"; };
+		3F0A8B5D23EB058300BB6D56 /* StarFighter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarFighter.entitlements; sourceTree = "<group>"; };
 		3F5E53AB23CC639A00A8B0E0 /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Starfield.sks; path = StarFighter/Starfield.sks; sourceTree = SOURCE_ROOT; };
 		3F5E53AD23CC63AB00A8B0E0 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		59B5AF1B23C0CD19006A849B /* StarFighter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarFighter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +130,7 @@
 		59B5AF1D23C0CD19006A849B /* StarFighter */ = {
 			isa = PBXGroup;
 			children = (
+				3F0A8B5D23EB058300BB6D56 /* StarFighter.entitlements */,
 				3F5E53AD23CC63AB00A8B0E0 /* Explosion.sks */,
 				3F5E53AB23CC639A00A8B0E0 /* Starfield.sks */,
 				59EFC3B723C21DFD001D37F4 /* Domains */,
@@ -595,16 +597,19 @@
 			baseConfigurationReference = F279764D71AEE228274759B6 /* Pods-StarFighter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StarFighter/StarFighter.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = W69PPH7MV9;
+				DEVELOPMENT_TEAM = F66C8G9FWJ;
 				INFOPLIST_FILE = StarFighter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Hera.StarFighter;
+				PRODUCT_BUNDLE_IDENTIFIER = test.testito;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -615,16 +620,19 @@
 			baseConfigurationReference = 31BCCD50C22399CBE065AC96 /* Pods-StarFighter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StarFighter/StarFighter.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = W69PPH7MV9;
+				DEVELOPMENT_TEAM = F66C8G9FWJ;
 				INFOPLIST_FILE = StarFighter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Hera.StarFighter;
+				PRODUCT_BUNDLE_IDENTIFIER = test.testito;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

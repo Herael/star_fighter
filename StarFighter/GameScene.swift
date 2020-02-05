@@ -137,7 +137,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let data = try! Data(contentsOf: self.playerSpaceship.img!)
                 
                 let image = UIImage(data: data)
-                print(image?.size)
+                
                 let Texture = SKTexture(image: image!)
                 self.player = SKSpriteNode(texture: Texture)
             } else {
@@ -200,6 +200,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         alien.physicsBody?.collisionBitMask = 0
         worldNode.addChild(alien)
         
+        #warning("mettre taille ecran")
         let moveLeft = SKAction.move(to: CGPoint(x: -300, y:  500), duration: 5)
         let moveRight = SKAction.move(to: CGPoint(x: 300, y:  500), duration: 5)
 
