@@ -212,8 +212,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }else{
         atkSpeed = Double(10.00 / Float(enemy.speed))
         }
-//        print(atkSpeed)
-        self.gameTimer = Timer.scheduledTimer(timeInterval: atkSpeed, target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
+        print(atkSpeed)
+        self.gameTimer = Timer.scheduledTimer(timeInterval: atkSpeed + 0.5, target: self, selector: #selector(enemyFire), userInfo: nil, repeats: true)
         
         
         alien?.run(SKAction.repeatForever(SKAction.sequence([moveLeft, moveRight])))
