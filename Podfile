@@ -7,5 +7,6 @@ target 'StarFighter' do
 
   # Pods for StarFighter
    pod 'Alamofire'
+   pod 'SDWebImage'
 
 end

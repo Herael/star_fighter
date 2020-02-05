@@ -31,12 +31,11 @@ class StarshipDetailViewController: UIViewController {
         spaceshipHp.text = String(spaceship.hp)
         spaceshipDamage.text = String(spaceship.damage)
         if let pictureURL = spaceship.img {
-            DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: pictureURL) {
-                    DispatchQueue.main.sync {
-                        self.spaceshipImageViewController.image = UIImage(data: data)
-                    }
-                }
+                            if let data = try? Data(contentsOf: pictureURL) {
+               
+                        self.spaceshipImageViewController.sd_setImage(with:pictureURL , placeholderImage: UIImage(named: "load.png"))
+                    
+                
             }
         }
     }
