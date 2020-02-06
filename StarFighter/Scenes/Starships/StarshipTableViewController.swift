@@ -8,11 +8,13 @@
 
 import UIKit
 import SDWebImage
+import GameKit
+
 
 var allShips:[Spaceship] = [ ]
 var playerShip:Spaceship? = nil
 
-class StarshipTableViewController: UITableViewController {
+class StarshipTableViewController: UITableViewController,GKGameCenterControllerDelegate {
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView(style: .gray)
     
     @IBOutlet var starshipTableView: UITableView!
@@ -38,6 +40,7 @@ class StarshipTableViewController: UITableViewController {
         self.starshipTableView.dataSource = self
         self.starshipTableView.delegate = self
         self.starshipTableView.rowHeight = 120
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(checkLeaderboard))
         self.starshipTableView.register(UINib(nibName: "StarshipTableViewCell", bundle: nil), forCellReuseIdentifier:StarshipTableViewController.spaceshipCellId)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
@@ -50,6 +53,20 @@ class StarshipTableViewController: UITableViewController {
             allShips = spaceships
             
         }
+    }
+    
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+           gameCenterViewController.dismiss(animated: true, completion: nil)
+       }
+    
+    @objc func checkLeaderboard() {
+        
+        let gcVC = GKGameCenterViewController()
+    gcVC.gameCenterDelegate = self as! GKGameCenterControllerDelegate
+        gcVC.viewState = .leaderboards
+        gcVC.leaderboardIdentifier = LEADERBOARD_ID
+        present(gcVC, animated: true, completion: nil)
+        
     }
     
     
