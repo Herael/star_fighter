@@ -87,7 +87,7 @@ class StarshipTableViewController: UITableViewController/*,GKGameCenterControlle
             else{ return UITableViewCell() }
         let spaceship = self.spaceships[indexPath.row]
         cell.starshipName.text = spaceship.name
-        cell.damage.text = String(spaceship.damage)
+        cell.damage.text = "Damage: \(spaceship.damage)"
         if let pictureURL = spaceship.img {
             cell.starshipImage.sd_setImage(with:pictureURL , placeholderImage: UIImage(named: "load.png"))
         }
