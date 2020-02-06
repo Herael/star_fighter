@@ -9,6 +9,7 @@
 import SpriteKit
 import GameplayKit
 import  CoreMotion
+import GameKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -338,6 +339,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 win.fontName = "Zapfino"
                 win.fontSize = 50
                 win.color = UIColor.white
+                addScoreSubmit(score: Int(scoreLabel.text!)! )
                 addChild(win)
                 self.scene?.view!.isPaused = true
                 break
@@ -418,6 +420,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 //        print(alien.position.x)
         
+        
+    }
+    
+    
+    
+    func addScoreSubmit(score:Int) {
+        // Submit score to GC leaderboard
+        print(score)
+        let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
+        bestScoreInt.value = Int64(score)
+        GKScore.report([bestScoreInt]) { (error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                print("Best Score submitted to your Leaderboard!")
+            }
+        }
         
     }
 }
