@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="aUJ-LJ-7IF">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="1280"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="1024"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="R2P-tl-qWz">
                     <rect key="frame" x="80" y="229" width="254" height="205"/>
@@ -61,7 +61,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
                     <state key="normal" title="SIGN IN">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="touchButton:" destination="-1" eventType="touchUpInside" id="VK4-f4-qFH"/>
@@ -110,7 +110,7 @@
         </view>
     </objects>
     <resources>
-        <image name="background" width="720" height="1280"/>
+        <image name="background" width="1024" height="1024"/>
         <image name="logo2" width="200" height="163"/>
     </resources>
 </document>

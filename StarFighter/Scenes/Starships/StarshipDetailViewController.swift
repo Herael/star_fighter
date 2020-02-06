@@ -29,8 +29,8 @@ class StarshipDetailViewController: UIViewController,GKGameCenterControllerDeleg
         guard let spaceship = spaceshipSelected else {return}
         
         spaceshipName.text = spaceship.name
-        spaceshipHp.text = String(spaceship.hp)
-        spaceshipDamage.text = String(spaceship.damage)
+        spaceshipHp.text = "Hp: \(spaceship.hp)"
+        spaceshipDamage.text = "Damage: \(spaceship.damage)"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(checkLeaderboard))
         if let pictureURL = spaceship.img {
                             if let data = try? Data(contentsOf: pictureURL) {
