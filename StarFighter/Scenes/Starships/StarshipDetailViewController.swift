@@ -10,7 +10,7 @@ import UIKit
 import GameKit
 
 
-class StarshipDetailViewController: UIViewController,GKGameCenterControllerDelegate {
+class StarshipDetailViewController: UIViewController/*,GKGameCenterControllerDelegate*/ {
 
     
     let preferences = UserDefaults.standard
@@ -31,7 +31,7 @@ class StarshipDetailViewController: UIViewController,GKGameCenterControllerDeleg
         spaceshipName.text = spaceship.name
         spaceshipHp.text = String(spaceship.hp)
         spaceshipDamage.text = String(spaceship.damage)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(checkLeaderboard))
+        //self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(checkLeaderboard))
         if let pictureURL = spaceship.img {
                             if let data = try? Data(contentsOf: pictureURL) {
                
@@ -42,7 +42,7 @@ class StarshipDetailViewController: UIViewController,GKGameCenterControllerDeleg
         }
     }
     
-    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+    /*func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
            gameCenterViewController.dismiss(animated: true, completion: nil)
        }
     
@@ -54,7 +54,7 @@ class StarshipDetailViewController: UIViewController,GKGameCenterControllerDeleg
         gcVC.leaderboardIdentifier = LEADERBOARD_ID
         present(gcVC, animated: true, completion: nil)
         
-    }
+    }*/
     
     
     @IBAction func validButtonAction(_ sender: Any) {

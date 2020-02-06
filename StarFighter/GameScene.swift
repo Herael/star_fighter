@@ -339,7 +339,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 win.fontName = "Zapfino"
                 win.fontSize = 50
                 win.color = UIColor.white
-                addScoreSubmit(score: Int(scoreLabel.text!)! )
+                //addScoreSubmit(score: Int(scoreLabel.text!)! )
                 addChild(win)
                 self.scene?.view!.isPaused = true
                 break
@@ -425,7 +425,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    func addScoreSubmit(score:Int) {
+    /*func addScoreSubmit(score:Int) {
         // Submit score to GC leaderboard
         print(score)
         let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
@@ -438,5 +438,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-    }
+    }*/
 }

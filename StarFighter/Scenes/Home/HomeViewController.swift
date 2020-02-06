@@ -9,7 +9,7 @@
 import UIKit
 import GameKit
 let LEADERBOARD_ID = "com.esgi.findout"
-class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
+class HomeViewController: UIViewController/*, GKGameCenterControllerDelegate*/ {
     
     @IBOutlet var label_score: UILabel!
     
@@ -29,13 +29,13 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
         // Show initial sco
         
         // Call the GC authentication controller
-        authenticateLocalPlayer()
+        //authenticateLocalPlayer()
         
         // Do any additional setup after loading the view.
     }
     
     
-    func authenticateLocalPlayer() {
+    /*func authenticateLocalPlayer() {
         let localPlayer = GKLocalPlayer()// = GKLocalPlayer.localPlayer()
         
         localPlayer.authenticateHandler = {(ViewController, error) -> Void in
@@ -48,7 +48,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
                     
                 // Get the default leaderboard ID
                 localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifer, error) in
-                    if error != nil { print(error)
+                    if error != nil { print(error as Any)
                     } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
                 })
                 
@@ -56,15 +56,15 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
                 // 3 Game center is not enabled on the users device
                 self.gcEnabled = false
                 print("Local player could not be authenticated!")
-                print(error)
+                print(error as Any)
             }
         }
-    }
+    }*/
     
     // Delegate to dismiss the GC controller
-    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+    /*func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
-    }
+    }*/
     
     
 
