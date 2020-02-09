@@ -68,7 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         pause.color = UIColor.white
         
         pauseButton = SKLabelNode(text: "Pause")
-        pauseButton.position = CGPoint(x: self.frame.width / -4.2, y: self.frame.height/3)
+        pauseButton.position = CGPoint(x: self.frame.width / -4.2, y: self.frame.height/3.5)
         pauseButton.fontName = "Zapfino"
         pauseButton.fontSize = 50
         pauseButton.name = "pause"
@@ -243,7 +243,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let node : SKNode = self.atPoint(location)
                 if node.name == "pause"{
                     addChild(pause)
-                    
                     worldNode.isPaused = true
                     
                     
@@ -256,16 +255,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !worldNode.isPaused {
-                  for touch in touches {
-                      let location = touch.location(in: self)
-                      player.position.x = location.x
-                     
-                  }
-              }
-        
-    }
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        if !worldNode.isPaused {
+//                  for touch in touches {
+//                      let location = touch.location(in: self)
+//                      player.position.x = location.x
+//
+//                  }
+//              }
+//
+//    }
     
 
     
@@ -331,6 +330,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if(alien.name == "player"){
             percentBar = (enemy.damage*100) / playerSpaceship.hp
             lifePlayer -= percentBar
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             HealthBarPlayer.size = CGSize(width: lifePlayer, height: 30)
             switch lifePlayer {
             case ...0:
