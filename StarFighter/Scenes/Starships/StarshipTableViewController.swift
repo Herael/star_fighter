@@ -17,6 +17,8 @@ var playerShip:Spaceship? = nil
 class StarshipTableViewController: UITableViewController/*,GKGameCenterControllerDelegate*/ {
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView(style: .gray)
     
+    var player: AVAudioPlayer!
+    
     @IBOutlet var starshipTableView: UITableView!
     public static let spaceshipCellId = "STARSHIP_ID"
     var spaceships: [Spaceship] = [] {
@@ -43,19 +45,44 @@ class StarshipTableViewController: UITableViewController/*,GKGameCenterControlle
         //self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(checkLeaderboard))
         self.starshipTableView.register(UINib(nibName: "StarshipTableViewCell", bundle: nil), forCellReuseIdentifier:StarshipTableViewController.spaceshipCellId)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
-        
-        
+        initAudioPlayer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.spaceshipService.getAll { (spaceships) in
             self.spaceships = spaceships
             allShips = spaceships
-            
+        }
+        if self.player != nil {
+            self.player.play()
         }
     }
     
    /* func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+    override func viewDidDisappear(_ animated: Bool) {
+        self.player.pause()
+    }
+    
+    @discardableResult
+       func initAudioPlayer() -> Bool {
+           guard self.player == nil else {
+               return true
+           }
+           guard let musicURL = Bundle.main.url(forResource: "Cantina", withExtension: "mp3") else {
+               return false
+           }
+           if let player = try? AVAudioPlayer(contentsOf: musicURL) {
+               self.player = player
+               self.player.numberOfLoops = -1
+               self.player.prepareToPlay()
+               return true
+           }
+           return false
+       }
+       
+    
+    
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
            gameCenterViewController.dismiss(animated: true, completion: nil)
        }
     
