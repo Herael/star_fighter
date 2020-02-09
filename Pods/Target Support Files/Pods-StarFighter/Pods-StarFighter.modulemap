@@ -1,6 +1,0 @@
-framework module Pods_StarFighter {
-  umbrella header "Pods-StarFighter-umbrella.h"
-
-  export *
-  module * { export * }
-}
