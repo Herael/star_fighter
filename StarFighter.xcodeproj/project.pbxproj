@@ -140,8 +140,6 @@
 				59EFC3B723C21DFD001D37F4 /* Domains */,
 				59EFC3B123C21D9E001D37F4 /* Platforms */,
 				59EFC39F23C200D4001D37F4 /* soundEffects */,
-				CEEDE3D623C21C520005E7C7 /* Platforms */,
-				CEEDE3D723C21C660005E7C7 /* Domains */,
 				CEEDE3D823C21C730005E7C7 /* Scenes */,
 				59B5AF1E23C0CD19006A849B /* AppDelegate.swift */,
 				59B5AF2023C0CD19006A849B /* GameScene.sks */,
@@ -228,20 +226,6 @@
 				128386F583CC21BD28FD36A8 /* Pods_StarFighter.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CEEDE3D623C21C520005E7C7 /* Platforms */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Platforms;
-			sourceTree = "<group>";
-		};
-		CEEDE3D723C21C660005E7C7 /* Domains */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domains;
 			sourceTree = "<group>";
 		};
 		CEEDE3D823C21C730005E7C7 /* Scenes */ = {
