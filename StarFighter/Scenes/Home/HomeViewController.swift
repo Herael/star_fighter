@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         // Show initial sco
         
         // Call the GC authentication controller
