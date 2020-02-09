@@ -70,6 +70,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
 
     
     @IBAction func touchButton(_ sender: Any) {
+        print("aie! ça fait mal !")
         let spaceshipList = StarshipTableViewController()
         self.navigationController?.pushViewController(spaceshipList, animated: true)
     }

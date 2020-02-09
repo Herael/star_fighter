@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,18 +14,18 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="8ug-Lb-SMO">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="R2P-tl-qWz">
-                    <rect key="frame" x="57" y="298" width="300" height="300"/>
+                    <rect key="frame" x="57" y="218" width="300" height="300"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="Sba-0j-VRC"/>
                         <constraint firstAttribute="height" constant="300" id="bZ0-OZ-NSx"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVc-Uk-brk">
-                    <rect key="frame" x="172.5" y="618" width="69" height="41"/>
+                    <rect key="frame" x="172.66666666666666" y="538" width="69" height="41"/>
                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
                     <state key="normal" title="START">
                         <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,30 +34,31 @@
                         <action selector="touchButton:" destination="-1" eventType="touchUpInside" id="VK4-f4-qFH"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tie" translatesAutoresizingMaskIntoConstraints="NO" id="wy8-xG-HyK">
-                    <rect key="frame" x="30" y="54" width="194" height="234"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starDestroyer" translatesAutoresizingMaskIntoConstraints="NO" id="eDM-gg-5uZ">
-                    <rect key="frame" x="150" y="702" width="254" height="140"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tie" translatesAutoresizingMaskIntoConstraints="NO" id="Lli-Yj-SaH">
+                    <rect key="frame" x="30" y="50" width="140" height="140"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="140" id="Fd0-7S-RGQ"/>
+                        <constraint firstAttribute="width" constant="140" id="FH3-u4-1XP"/>
+                        <constraint firstAttribute="height" constant="140" id="yV8-YA-wYr"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starDestroyer" translatesAutoresizingMaskIntoConstraints="NO" id="v0F-mb-pgk">
+                    <rect key="frame" x="244" y="576" width="140" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="eig-O9-vUY"/>
+                        <constraint firstAttribute="height" constant="140" id="uPB-iI-eZS"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="eDM-gg-5uZ" firstAttribute="top" secondItem="jVc-Uk-brk" secondAttribute="bottom" constant="43" id="EgF-ap-Md7"/>
-                <constraint firstItem="R2P-tl-qWz" firstAttribute="top" secondItem="wy8-xG-HyK" secondAttribute="bottom" constant="10" id="GBW-eJ-agV"/>
-                <constraint firstItem="wy8-xG-HyK" firstAttribute="top" secondItem="AOc-Bu-2Yz" secondAttribute="top" constant="10" id="Hf0-FW-NNW"/>
-                <constraint firstItem="R2P-tl-qWz" firstAttribute="centerY" secondItem="8ug-Lb-SMO" secondAttribute="centerY" id="Iav-gj-n6O"/>
-                <constraint firstItem="jVc-Uk-brk" firstAttribute="top" secondItem="R2P-tl-qWz" secondAttribute="bottom" constant="20" id="MMr-nx-P9Q"/>
-                <constraint firstItem="AOc-Bu-2Yz" firstAttribute="trailing" secondItem="eDM-gg-5uZ" secondAttribute="trailing" constant="10" id="U3g-YX-BQM"/>
-                <constraint firstItem="AOc-Bu-2Yz" firstAttribute="bottom" secondItem="eDM-gg-5uZ" secondAttribute="bottom" constant="20" id="ZZx-31-CYT"/>
-                <constraint firstItem="AOc-Bu-2Yz" firstAttribute="trailing" secondItem="wy8-xG-HyK" secondAttribute="trailing" constant="190" id="bY8-sr-wRP"/>
-                <constraint firstItem="wy8-xG-HyK" firstAttribute="leading" secondItem="AOc-Bu-2Yz" secondAttribute="leading" constant="30" id="gXd-Tf-AUo"/>
-                <constraint firstItem="eDM-gg-5uZ" firstAttribute="leading" secondItem="AOc-Bu-2Yz" secondAttribute="leading" constant="150" id="jGf-Fe-XT7"/>
-                <constraint firstItem="R2P-tl-qWz" firstAttribute="centerX" secondItem="8ug-Lb-SMO" secondAttribute="centerX" id="qBY-8k-2N1"/>
-                <constraint firstItem="jVc-Uk-brk" firstAttribute="centerX" secondItem="8ug-Lb-SMO" secondAttribute="centerX" id="vJB-nJ-3f6"/>
+                <constraint firstItem="AOc-Bu-2Yz" firstAttribute="trailing" secondItem="v0F-mb-pgk" secondAttribute="trailing" constant="30" id="3LY-y1-u6Y"/>
+                <constraint firstItem="jVc-Uk-brk" firstAttribute="centerX" secondItem="8ug-Lb-SMO" secondAttribute="centerX" id="ILv-Vv-5Op"/>
+                <constraint firstItem="AOc-Bu-2Yz" firstAttribute="bottom" secondItem="v0F-mb-pgk" secondAttribute="bottom" constant="20" id="V9U-SL-zIJ"/>
+                <constraint firstItem="R2P-tl-qWz" firstAttribute="centerX" secondItem="8ug-Lb-SMO" secondAttribute="centerX" id="dvN-aV-RUn"/>
+                <constraint firstItem="Lli-Yj-SaH" firstAttribute="leading" secondItem="AOc-Bu-2Yz" secondAttribute="leading" constant="30" id="eDf-p9-z9B"/>
+                <constraint firstItem="jVc-Uk-brk" firstAttribute="top" secondItem="R2P-tl-qWz" secondAttribute="bottom" constant="20" id="hDh-9D-T3h"/>
+                <constraint firstItem="R2P-tl-qWz" firstAttribute="centerY" secondItem="8ug-Lb-SMO" secondAttribute="centerY" id="nXx-SN-1CR"/>
+                <constraint firstItem="Lli-Yj-SaH" firstAttribute="top" secondItem="AOc-Bu-2Yz" secondAttribute="top" constant="50" id="yQO-Uy-cK2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="AOc-Bu-2Yz"/>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
