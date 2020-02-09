@@ -17,15 +17,9 @@ class SpaceshipAPIService: SpaceshipService {
         "Content-Type": "application/json"
     ]
 
-    
-    
     func create(name: String, completion: @escaping (Bool) -> Void) {
         //todo
     }
-    
-    
-    
-    
     
     func getAll(completion: @escaping ([Spaceship]) -> Void) {
         var spaceshipsResponse:[Spaceship] = []

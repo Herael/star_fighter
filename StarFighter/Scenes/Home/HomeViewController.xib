@@ -18,14 +18,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="R2P-tl-qWz">
-                    <rect key="frame" x="32" y="273" width="350" height="350"/>
+                    <rect key="frame" x="57" y="298" width="300" height="300"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="350" id="Sba-0j-VRC"/>
-                        <constraint firstAttribute="height" constant="350" id="bZ0-OZ-NSx"/>
+                        <constraint firstAttribute="width" constant="300" id="Sba-0j-VRC"/>
+                        <constraint firstAttribute="height" constant="300" id="bZ0-OZ-NSx"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVc-Uk-brk">
-                    <rect key="frame" x="172.5" y="673" width="69" height="41"/>
+                    <rect key="frame" x="172.5" y="618" width="69" height="41"/>
                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="25"/>
                     <state key="normal" title="START">
                         <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -35,17 +35,27 @@
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tie" translatesAutoresizingMaskIntoConstraints="NO" id="wy8-xG-HyK">
-                    <rect key="frame" x="30" y="54" width="194" height="209"/>
+                    <rect key="frame" x="30" y="54" width="194" height="234"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starDestroyer" translatesAutoresizingMaskIntoConstraints="NO" id="eDM-gg-5uZ">
+                    <rect key="frame" x="150" y="702" width="254" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="140" id="Fd0-7S-RGQ"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="eDM-gg-5uZ" firstAttribute="top" secondItem="jVc-Uk-brk" secondAttribute="bottom" constant="43" id="EgF-ap-Md7"/>
                 <constraint firstItem="R2P-tl-qWz" firstAttribute="top" secondItem="wy8-xG-HyK" secondAttribute="bottom" constant="10" id="GBW-eJ-agV"/>
                 <constraint firstItem="wy8-xG-HyK" firstAttribute="top" secondItem="AOc-Bu-2Yz" secondAttribute="top" constant="10" id="Hf0-FW-NNW"/>
                 <constraint firstItem="R2P-tl-qWz" firstAttribute="centerY" secondItem="8ug-Lb-SMO" secondAttribute="centerY" id="Iav-gj-n6O"/>
-                <constraint firstItem="jVc-Uk-brk" firstAttribute="top" secondItem="R2P-tl-qWz" secondAttribute="bottom" constant="50" id="MMr-nx-P9Q"/>
+                <constraint firstItem="jVc-Uk-brk" firstAttribute="top" secondItem="R2P-tl-qWz" secondAttribute="bottom" constant="20" id="MMr-nx-P9Q"/>
+                <constraint firstItem="AOc-Bu-2Yz" firstAttribute="trailing" secondItem="eDM-gg-5uZ" secondAttribute="trailing" constant="10" id="U3g-YX-BQM"/>
+                <constraint firstItem="AOc-Bu-2Yz" firstAttribute="bottom" secondItem="eDM-gg-5uZ" secondAttribute="bottom" constant="20" id="ZZx-31-CYT"/>
                 <constraint firstItem="AOc-Bu-2Yz" firstAttribute="trailing" secondItem="wy8-xG-HyK" secondAttribute="trailing" constant="190" id="bY8-sr-wRP"/>
                 <constraint firstItem="wy8-xG-HyK" firstAttribute="leading" secondItem="AOc-Bu-2Yz" secondAttribute="leading" constant="30" id="gXd-Tf-AUo"/>
+                <constraint firstItem="eDM-gg-5uZ" firstAttribute="leading" secondItem="AOc-Bu-2Yz" secondAttribute="leading" constant="150" id="jGf-Fe-XT7"/>
                 <constraint firstItem="R2P-tl-qWz" firstAttribute="centerX" secondItem="8ug-Lb-SMO" secondAttribute="centerX" id="qBY-8k-2N1"/>
                 <constraint firstItem="jVc-Uk-brk" firstAttribute="centerX" secondItem="8ug-Lb-SMO" secondAttribute="centerX" id="vJB-nJ-3f6"/>
             </constraints>
@@ -55,6 +65,7 @@
     </objects>
     <resources>
         <image name="logo2" width="200" height="163"/>
+        <image name="starDestroyer" width="640" height="421"/>
         <image name="tie" width="1892" height="2195"/>
     </resources>
 </document>

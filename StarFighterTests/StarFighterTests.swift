@@ -1,11 +1,6 @@
 //
 //  Algo2020TestCase.swift
 //  Test2020Tests
-//
-//  Created by Benoit Briatte on 08/01/2020.
-//  Copyright © 2020 ESGI. All rights reserved.
-//
-
 import XCTest
 @testable import StarFighter
 

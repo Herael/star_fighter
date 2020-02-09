@@ -1,10 +1,6 @@
 //
 //  Algo2020.swift
 //  Test2020
-//
-//  Created by Benoit Briatte on 08/01/2020.
-//  Copyright © 2020 ESGI. All rights reserved.
-//
 import Foundation
 
 class Algo2020 {
