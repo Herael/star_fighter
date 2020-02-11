@@ -11,13 +11,18 @@ import GameplayKit
 import  CoreMotion
 import GameKit
 
+
+protocol GameViewControllerDelegate:class {
+    func end()
+}
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var spaceshipService: SpaceshipService {
         return SpaceshipMockService()
 //        return SpaceshipAPIService()
     }
-    
+    var GameViewControllerDelegate: GameViewControllerDelegate?
     var playerSpaceship:Spaceship!
     var enemy:Spaceship!
     
@@ -44,6 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var xAcceleration:CGFloat = 0
     var win: SKLabelNode!
     var pause:SKLabelNode!
+    var end:SKLabelNode!
     var pauseButton:SKLabelNode!
     var enPause:Bool = false
     
@@ -51,6 +57,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var score:Int = 0
 
     override func didMove(to view: SKView) {
+        
     starfield = SKEmitterNode(fileNamed: "Starfield")
     starfield.position = CGPoint(x: 0, y: 1472)
     starfield.advanceSimulationTime(10)
@@ -66,6 +73,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         pause.fontSize = 50
         pause.name = "endpause"
         pause.color = UIColor.white
+        end = SKLabelNode(text: "end")
+        end.position = CGPoint(x: 0, y: 50)
+        end.fontName = "Zapfino"
+        end.fontSize = 50
+        end.name = "end"
+        end.color = UIColor.white
         
         pauseButton = SKLabelNode(text: "Pause")
         pauseButton.position = CGPoint(x: self.frame.width / -4.2, y: self.frame.height/3.5)
@@ -243,15 +256,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 let node : SKNode = self.atPoint(location)
                 if node.name == "pause"{
                     addChild(pause)
+                    addChild(end)
                     worldNode.isPaused = true
                     
                     
                 }
             if node.name == "endpause"{
                 pause.removeFromParent()
+                end.removeFromParent()
                 worldNode.isPaused = false
-                     
+                GameViewControllerDelegate?.end()
+                
             }
+            if node.name == "end"{
+              GameViewControllerDelegate?.end()
+              }
             }
         }
    

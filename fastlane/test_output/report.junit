@@ -2,7 +2,7 @@
 <testsuites name='StarFighterTests.xctest' tests='3' failures='0'>
   <testsuite name='StarFighterTests.Algo2020TestCase' tests='3' failures='0'>
     <testcase classname='StarFighterTests.Algo2020TestCase' name='testGreaterThan' time='0.003'/>
-    <testcase classname='StarFighterTests.Algo2020TestCase' name='testLessThan' time='0.001'/>
-    <testcase classname='StarFighterTests.Algo2020TestCase' name='testNotNull' time='0.004'/>
+    <testcase classname='StarFighterTests.Algo2020TestCase' name='testLessThan' time='0.002'/>
+    <testcase classname='StarFighterTests.Algo2020TestCase' name='testNotNull' time='0.008'/>
   </testsuite>
 </testsuites>
