@@ -12,10 +12,27 @@ import Alamofire
 
 class SpaceshipAPIService: SpaceshipService {
     
-    
+    let imageCache = NSCache<NSString, UIImage>()
+
     private let headers: HTTPHeaders = [
         "Content-Type": "application/json"
     ]
+    
+    
+    func downloadImage(urlString: String, image:UIImage){
+        let path = NSTemporaryDirectory().appending(UUID().uuidString)
+        let url = URL(fileURLWithPath: path)
+        
+        let data = image.pngData()
+        try? data?.write(to : url)
+        
+        var dict = UserDefaults.standard.object(forKey: "ImageCache") as? [String:String]
+        if dict == nil {
+            dict = [String:String]()
+        }
+        dict![urlString] = path
+        UserDefaults.standard.set(dict, forKey: "ImageCache")
+    }
 
     func create(name: String, completion: @escaping (Bool) -> Void) {
         //todo
@@ -44,6 +61,7 @@ class SpaceshipAPIService: SpaceshipService {
                         print("error on /getAll")
                         return
                 }
+                
                 spaceshipsResponse.append(Spaceship(id: id, name: name, model: model, manufacturer: manufacturer, speed: speed, hp: hp, damage: damage, spaceshipClass: spaceshipClass, img: URL(string: img)))
                 
             }

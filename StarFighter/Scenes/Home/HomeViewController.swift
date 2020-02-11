@@ -28,6 +28,7 @@ class HomeViewController: UIViewController, GKGameCenterControllerDelegate {
          self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         // Show initial sco
         
+        
         // Call the GC authentication controller
         authenticateLocalPlayer()
         

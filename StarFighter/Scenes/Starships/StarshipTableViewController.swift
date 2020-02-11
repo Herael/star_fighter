@@ -30,6 +30,8 @@ class StarshipTableViewController: UITableViewController,GKGameCenterControllerD
     
     
     
+    
+    
     var spaceshipService: SpaceshipService {
         //        return SpaceshipMockService()
         return SpaceshipAPIService()
@@ -44,7 +46,7 @@ class StarshipTableViewController: UITableViewController,GKGameCenterControllerD
         self.starshipTableView.delegate = self
         self.starshipTableView.rowHeight = 120
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(checkLeaderboard))
-        self.starshipTableView.register(UINib(nibName: "StarshipTableViewCell", bundle: nil), forCellReuseIdentifier:StarshipTableViewController.spaceshipCellId)
+        self.navigationItem.setHidesBackButton(true, animated: true);      self.starshipTableView.register(UINib(nibName: "StarshipTableViewCell", bundle: nil), forCellReuseIdentifier:StarshipTableViewController.spaceshipCellId)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         initAudioPlayer()
     }
@@ -57,6 +59,7 @@ class StarshipTableViewController: UITableViewController,GKGameCenterControllerD
         if self.player != nil {
             self.player.play()
         }
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

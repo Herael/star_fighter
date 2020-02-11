@@ -11,7 +11,7 @@ import SpriteKit
 import GameplayKit
 import GameKit
 
-class GameViewController: UIViewController{
+class GameViewController: UIViewController,GameViewControllerDelegate{
    
     
 
@@ -26,11 +26,16 @@ class GameViewController: UIViewController{
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
+                
+                let gameScene = scene as! GameScene
+                gameScene.GameViewControllerDelegate = self
+                gameScene.scaleMode = .aspectFill
                 
                 // Present the scene
-                view.presentScene(scene)
+                view.presentScene(gameScene)
+                
             }
+         
             view.ignoresSiblingOrder = true
             
             view.showsFPS = true
@@ -38,6 +43,13 @@ class GameViewController: UIViewController{
             
             
         }
+        
+    }
+    
+    func end(){
+        print("test")
+        let test = StarshipTableViewController()
+        self.navigationController?.pushViewController(test, animated: true)
         
     }
 
