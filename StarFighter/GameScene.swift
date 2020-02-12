@@ -74,7 +74,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         pause.name = "endpause"
         pause.color = UIColor.white
         end = SKLabelNode(text: "end")
-        end.position = CGPoint(x: 0, y: 50)
+        end.position = CGPoint(x: 0, y: -85)
         end.fontName = "Zapfino"
         end.fontSize = 50
         end.name = "end"
@@ -265,7 +265,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 pause.removeFromParent()
                 end.removeFromParent()
                 worldNode.isPaused = false
-                GameViewControllerDelegate?.end()
                 
             }
             if node.name == "end"{
